@@ -83,12 +83,17 @@ CPU_BOOLEAN Exosite_Update(void);
 */
 CPU_BOOLEAN Exosite_Reinit(void)
 {
+    CPU_SIZE_T i;
+
     update_m2ip();
     activate_device();
 
-    if (0 == CIK[0])
+    for (i = 0; i < CIK_LENGTH; i++)
     {
-        return DEF_FALSE;
+        if (!(CIK[i] >= 'a' && CIK[i] <= 'f' || CIK[i] >= '0' && CIK[i] <= '9'))
+        {
+            return DEF_FALSE;
+        }
     }
 
     return DEF_TRUE;
