@@ -192,7 +192,7 @@ static  void  AppTaskStart (void *p_arg)
     Mem_Init();                                                 /* Initialize mem mgmt module, required for TCP-IP.     */
 
 #if (APP_CFG_PROBE_COM_MODULE_EN > 0u)
-    AppProbe_Init();                                            /* Initialize uC/Probe modules                          */
+//    AppProbe_Init();                                            /* Initialize uC/Probe modules                          */
 #endif
 
     OSTaskCreate((OS_TCB     *)&AppFFTTaskTCB,                  /* Create the start task                                */
