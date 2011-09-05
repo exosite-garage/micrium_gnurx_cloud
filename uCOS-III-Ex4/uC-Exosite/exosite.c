@@ -653,7 +653,6 @@ void update_m2ip(void)
         }
     }
 
-
     socket_close(sock);
     return;
 }
@@ -753,7 +752,7 @@ static void init_mac_address(void)
 static void socket_close(NET_SOCK_ID sock)
 {
     NET_ERR err;
-    //NetSock_CfgTimeoutConnCloseSet(sock, 100, &err);
+    NetSock_CfgTimeoutConnCloseSet(sock, 3000, &err);
     NetSock_Close(sock, &err);
 }
 
@@ -788,7 +787,7 @@ static NET_SOCK_ID socket_open(void)
         return -1;
     }
 
-    NetSock_CfgTimeoutConnReqSet(sock, 1000, &err);
+    NetSock_CfgTimeoutConnReqSet(sock, 2000, &err);
 
     if (NET_SOCK_ERR_NONE != err)
     {
@@ -821,6 +820,8 @@ static CPU_SIZE_T socket_recv(NET_SOCK_ID sock, CPU_CHAR *rx_buf, CPU_SIZE_T rx_
     NET_SOCK_RTN_CODE  rtn_code;
     NET_ERR            err;
 
+    NetSock_CfgTimeoutRxQ_Set(sock, 5000, &err);
+
     rtn_code = NetSock_RxData(
         (NET_SOCK_ID) sock,
         (void *)      rx_buf,
@@ -849,6 +850,8 @@ static CPU_SIZE_T socket_send(NET_SOCK_ID sock, CPU_CHAR *tx_buf, CPU_SIZE_T tx_
 
     while (tx_size < tx_buflen)
     {
+        NetSock_CfgTimeoutTxQ_Set(sock, 3000, &err);
+
         rtn_code = NetSock_TxData(
             (NET_SOCK_ID) sock,
             (void *)     (tx_buf + tx_size),
