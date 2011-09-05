@@ -48,6 +48,8 @@
 
 #define  OS_PROBE_TASK_PRIO                            10u
 
+#define  CLOUD_DATA_TASK_PRIO                          11u
+
 #define  HTTPs_OS_CFG_TASK_PRIO                        13u
 
 /*
@@ -61,6 +63,7 @@
 #define  ACCEL_TASK_STK_SIZE                          512u
 #define  TEMPERATURE_TASK_STK_SIZE                    512u
 #define  APP_FFT_TASK_STK_SIZE                        400u
+#define  CLOUD_DATA_TASK_STK_SIZE                     512u
 
 #define  NET_OS_CFG_TMR_TASK_STK_SIZE                 768u
 #define  NET_OS_CFG_IF_TX_DEALLOC_TASK_STK_SIZE       512u

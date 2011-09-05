@@ -86,6 +86,7 @@ static  void  AppGraphLCD_Hdr  (void);
         void  AppProbe_Init    (void);
 #endif
 
+        void  AppCloud_Init    (void);
 
 /*
 *********************************************************************************************************
@@ -104,6 +105,7 @@ volatile  CPU_INT16U  AppFreqSetpointHz      = 100;
 volatile  CPU_INT16U  AppFreqSetpointPotHz   = 100;
 volatile  CPU_INT16U  AppFreqSetpointProbeHz = 100;
 
+volatile  CPU_INT08U  AppCloudControlLedOn   =   1;
 
 /*
 *********************************************************************************************************
@@ -232,6 +234,9 @@ static  void  AppTaskStart (void *p_arg)
 #else
     AppTCPIP_Cfg = DEF_TRUE;
 #endif
+
+    AppCloud_Init();
+
                                                                 /* Display TCP/IP data for several seconds              */
     OSTimeDlyHMSM(0u, 0u, 10u, 0u,
                   OS_OPT_TIME_HMSM_STRICT,
@@ -661,8 +666,11 @@ void  AppADC_ISR_ConversionHandler (void)
         if (led_idx == 10){
             led_idx  = 4;
         }
-        LED_On(led_idx);
-        LED_On(led_idx + 6);
+        if (AppCloudControlLedOn > 0)
+        {
+            LED_On(led_idx);
+            LED_On(led_idx + 6);
+        }
         led_dly = 5000 / AppFreqActualHz;
     }
     led_dly--;
