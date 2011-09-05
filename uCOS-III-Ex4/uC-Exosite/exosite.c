@@ -611,26 +611,30 @@ void update_m2ip(void)
 
             p = ip;
 
-            for (i = 0; i < 6; i++)
+            for (i = 0; i < 6, iplen > 0; i++)
             {
                 if (*p >= '0' && *p <= '9')
                 {
                     server_ip[i] = *p++ - '0';
+                    if (0 == --iplen) break;
                 }
                 if (*p >= '0' && *p <= '9')
                 {
                     server_ip[i] *= 10;
                     server_ip[i] += *p++ - '0';
+                    if (0 == --iplen) break;
                 }
                 if (*p >= '0' && *p <= '9')
                 {
                     server_ip[i] *= 10;
                     server_ip[i] += *p++ - '0';
+                    if (0 == --iplen) break;
                 }
                 if (',' != *p++)
                 {
                     break;
                 }
+                --iplen;
             }
 
             if (6 == i)
