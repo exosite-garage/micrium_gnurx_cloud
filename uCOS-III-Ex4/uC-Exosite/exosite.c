@@ -641,6 +641,14 @@ void update_m2ip(void)
             {
                 rdk_meta *meta_info = (rdk_meta *)RDK_META_LOCATION;
                 rdk_meta_write(server_ip, 6, meta_info->server);
+
+                // Convert stored copy to something usable
+                IP   =  server_ip[0] * 16777216
+                      + server_ip[1] * 65536
+                      + server_ip[2] * 256
+                      + server_ip[3] * 1;
+                PORT =  server_ip[4] * 256
+                      + server_ip[5] * 1;
             }
         }
     }
