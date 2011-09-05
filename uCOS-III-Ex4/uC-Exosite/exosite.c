@@ -632,13 +632,16 @@ void update_m2ip(void)
                 {
                     server_ip[i] *= 10;
                     server_ip[i] += *p++ - '0';
-                    if (0 == --iplen) break;
+                    --iplen;
                 }
-                if (',' != *p++)
+                if (iplen > 0)
                 {
-                    break;
+                    if (5 == i || ',' != *p++)
+                    {
+                        break;
+                    }
+                    --iplen;
                 }
-                --iplen;
             }
 
             if (6 == i)
