@@ -146,7 +146,11 @@ void Exosite_UseCIK(CPU_CHAR * pCIK)
 void Exosite_SetCIK(CPU_CHAR * pCIK)
 {
     rdk_meta *meta_info = (rdk_meta *)RDK_META_LOCATION;
-    rdk_meta_write(pCIK, CIK_LENGTH, meta_info->cik);
+
+    if (0 != Str_Cmp_N((CPU_CHAR*)meta_info->cik, pCIK, CIK_LENGTH))
+    {
+        rdk_meta_write(pCIK, CIK_LENGTH, meta_info->cik);
+    }
     Str_Copy_N(CIK, pCIK, CIK_LENGTH);
 }
 
@@ -640,15 +644,19 @@ void update_m2ip(void)
             if (6 == i)
             {
                 rdk_meta *meta_info = (rdk_meta *)RDK_META_LOCATION;
-                rdk_meta_write(server_ip, 6, meta_info->server);
 
-                // Convert stored copy to something usable
-                IP   =  server_ip[0] * 16777216
-                      + server_ip[1] * 65536
-                      + server_ip[2] * 256
-                      + server_ip[3] * 1;
-                PORT =  server_ip[4] * 256
-                      + server_ip[5] * 1;
+                if (0 != Str_Cmp_N((CPU_CHAR*)meta_info->server, server_ip, 6))
+                {
+                    rdk_meta_write(server_ip, 6, meta_info->server);
+
+                    // Convert stored copy to something usable
+                    IP   =  server_ip[0] * 16777216
+                          + server_ip[1] * 65536
+                          + server_ip[2] * 256
+                          + server_ip[3] * 1;
+                    PORT =  server_ip[4] * 256
+                          + server_ip[5] * 1;
+                }
             }
         }
     }
