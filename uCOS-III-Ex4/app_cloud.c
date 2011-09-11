@@ -19,6 +19,7 @@
 */
 #include  <includes.h>
 
+#include "iodefine.h"
 /*
 *********************************************************************************************************
 *                                         LOCAL ENUMERATIONS
@@ -140,7 +141,12 @@ static void CloudData_Task (void *p_arg)
     {
         if (DEF_TRUE != cloud_available)
         {
-            BSP_GraphLCD_String(3, "Cloud: Unavailable");
+            if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
+                !PORT4.PORT.BIT.B1 ||
+                !PORT4.PORT.BIT.B2) 
+            {
+                BSP_GraphLCD_String(3, "Cloud: Unavailable");
+            } else BSP_GraphLCD_String(3, "");
 
             // Sleep 30 seconds
             OSTimeDlyHMSM((CPU_INT16U)  0u,
@@ -174,11 +180,21 @@ static void CloudData_Task (void *p_arg)
 
             if (DEF_TRUE != Exosite_Write_Batch(keys, values, 2))
             {
-                BSP_GraphLCD_String(3, "Cloud: Error");
+                if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
+                    !PORT4.PORT.BIT.B1 ||
+                    !PORT4.PORT.BIT.B2) 
+                {
+                    BSP_GraphLCD_String(3, "Cloud: Error");
+                } else BSP_GraphLCD_String(3, "");
             }
             else
             {
-                BSP_GraphLCD_String(3, "Cloud: Connected");
+                if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
+                    !PORT4.PORT.BIT.B1 ||
+                    !PORT4.PORT.BIT.B2)
+                {
+                    BSP_GraphLCD_String(3, "Cloud: Connected");
+                } else BSP_GraphLCD_String(3, "");
 
                 if (1 == Exosite_Read("led_ctrl", &ledctrl, 1))
                 {
