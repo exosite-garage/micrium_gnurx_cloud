@@ -1,15 +1,17 @@
 ========================================
 About uCOS-III-Ex4
 ========================================
-This project is a Micrium uC/OS-III cloud connectivity project for the Renesas 
-RX62N RDK system.  It sends and receives data to/from the cloud by using 
-Exosite's Cloud Data Platform.  The project is based on the Micrium "Ex4"
-motor simulation demo application for the Renesas RDK.  Communication with the 
-cloud is accomplished over HTTP.  The project functionality includes writing 
-the frequency value of the RDK's on-board PWM motor control to the cloud and 
-reading from a data source from the cloud to control the on-board LEDs.  Cloud
-status is displayed on the RDK's LCD screen.  This project can be re-used, 
-extended and deployed as desired.
+This project is a Micrium uC/OS-III project that implements a VFD (variable 
+freqency drive) motor controller simulation for the Renesas RX62N RDK.  It uses 
+a PWM signal as the motor drive and uses the on-board ADC to sample the 
+resulting sine wave and calculate the frequency.  The project also implements 
+cloud connectivity to send and receive data to/from the cloud by using 
+Exosite's Cloud Data Platform.  Communication with the cloud is accomplished 
+over HTTP.  The project functionality includes writing the frequency value of 
+the RDK's on-board PWM motor control to the cloud and reading from a data 
+source from the cloud to control the on-board LEDs.  Cloud status can be 
+displayed on the RDK's LCD screen by pushing SW1, SW2 or SW3.  This project can 
+be re-used, extended and deployed as desired.
 
 License is BSD, Copyright 2011, Exosite LLC (see LICENSE file)
 
@@ -23,8 +25,10 @@ Quick Start
 1) Install the Micrium exectuable from the RDK DVD
 * HINT: updates may be avaiable from www.micrium.com
 
-2) Copy the uCOS-III-Lib and uCOS-III-Ex4 folders over the like-named folders
-in the Micrium workspace directory
+2) Install the KPIT GNURX Toolchain v.11.02 (if not already)
+* HINT: download from http://www.kpitgnutools.com/index.php
+
+2) Open workspace "GNURX.hws" and select uCOS-III-Ex4 as the Current Project
 * Default directory is: C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX
 * NOTE: uC/Probe is disabled by default in this project
 
@@ -41,6 +45,11 @@ documentation at http://tinyurl.com/28cphut
 Release Info
 ========================================
 ----------------------------------------
+Release 2011-09-1
+----------------------------------------
+--) must push switch buttons to display cloud status<br>
+
+----------------------------------------
 Release 2011-09-05
 ----------------------------------------
 --) added auto device provisioning<br>
@@ -49,4 +58,4 @@ Release 2011-09-05
 ----------------------------------------
 Release 2011-08-31
 ----------------------------------------
---) initial version<br>
+--) initial cloud-enabled version<br>
