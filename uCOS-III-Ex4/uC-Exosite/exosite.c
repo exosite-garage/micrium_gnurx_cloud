@@ -431,17 +431,19 @@ static void activate_device(void)
     CPU_CHAR     NCIK[CIK_LENGTH];
     CPU_CHAR     rx[RX_SIZE];
     CPU_CHAR    *p, *pOSN, *pOSV;
-
+    rdk_meta *meta_info = (rdk_meta *)RDK_META_LOCATION;
+    
     pOSN = malloc(OSN_LENGTH * 3 + 1);
     osnlen = url_encode(pOSN, OSN_LENGTH * 3 + 1, OSN, OSN_LENGTH);
     pOSV = malloc(OSV_LENGTH * 3 + 1);
     osvlen = url_encode(pOSV, OSV_LENGTH * 3 + 1, OSV, OSV_LENGTH);
 
-    len  = 6 + PID_LENGTH;  // "model=",PID
-    len += 4 + MAC_LENGTH;  // "&sn=",MAC
-    len += 5 + osnlen;      // "&osn=",OSN
-    len += 5 + osvlen;      // "&osv=",OSV
-
+    len  = 6 + PID_LENGTH;        // "model=",PID
+    len += 4 + MAC_LENGTH;        // "&sn=",MAC
+    len += 5 + osnlen;            // "&osn=",OSN
+    len += 5 + osvlen;            // "&osv=",OSV
+    len += 5 + RDK_META_MFR_SIZE; // "&mfr=",MFRDATA
+    
     if (0 == Str_FmtNbr_Int32U (
         (CPU_INT32U)  len,
         (CPU_INT08U)  3,
@@ -464,21 +466,23 @@ static void activate_device(void)
     }
 
     if (
-        35         != socket_send(sock, "POST /provision/activate HTTP/1.1\r\n", 35) ||
-        22         != socket_send(sock, "Host: m2.exosite.com\r\n", 22) ||
-        64         != socket_send(sock, "Content-Type: application/x-www-form-urlencoded; charset=utf-8\r\n", 64) ||
-        35         != socket_send(sock, "Accept: text/plain; charset=utf-8\r\n", 35) ||
-        16         != socket_send(sock, "Content-Length: ", 16) ||
-        slen       != socket_send(sock, length, slen) ||
-        4          != socket_send(sock, "\r\n\r\n", 4) ||
-        6          != socket_send(sock, "model=", 6) ||
-        PID_LENGTH != socket_send(sock, PID, PID_LENGTH) ||
-        4          != socket_send(sock, "&sn=", 4) ||
-        MAC_LENGTH != socket_send(sock, MAC, MAC_LENGTH) ||
-        5          != socket_send(sock, "&osn=", 5) ||
-        osnlen     != socket_send(sock, pOSN, osnlen) ||
-        5          != socket_send(sock, "&osv=", 5) ||
-        osvlen     != socket_send(sock, pOSV, osvlen)
+        35                != socket_send(sock, "POST /provision/activate HTTP/1.1\r\n", 35) ||
+        22                != socket_send(sock, "Host: m2.exosite.com\r\n", 22) ||
+        64                != socket_send(sock, "Content-Type: application/x-www-form-urlencoded; charset=utf-8\r\n", 64) ||
+        35                != socket_send(sock, "Accept: text/plain; charset=utf-8\r\n", 35) ||
+        16                != socket_send(sock, "Content-Length: ", 16) ||
+        slen              != socket_send(sock, length, slen) ||
+        4                 != socket_send(sock, "\r\n\r\n", 4) ||
+        6                 != socket_send(sock, "model=", 6) ||
+        PID_LENGTH        != socket_send(sock, PID, PID_LENGTH) ||
+        4                 != socket_send(sock, "&sn=", 4) ||
+        MAC_LENGTH        != socket_send(sock, MAC, MAC_LENGTH) ||
+        5                 != socket_send(sock, "&osn=", 5) ||
+        osnlen            != socket_send(sock, pOSN, osnlen) ||
+        5                 != socket_send(sock, "&osv=", 5) ||
+        osvlen            != socket_send(sock, pOSV, osvlen) ||
+        5                 != socket_send(sock, "&mfr=", 5) ||
+        RDK_META_MFR_SIZE != socket_send(sock, meta_info->mfr, RDK_META_MFR_SIZE)
     )
     {
         socket_close(sock);

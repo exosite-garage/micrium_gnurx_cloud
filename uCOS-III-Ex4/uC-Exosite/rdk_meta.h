@@ -35,13 +35,15 @@
 #define RDK_META_SERVER_SIZE          6
 #define RDK_META_PAD0_SIZE            2
 #define RDK_META_MARK_SIZE            8
-#define RDK_META_RSVD_SIZE            200
+#define RDK_META_RSVD_SIZE            72
+#define RDK_META_MFR_SIZE             128
 typedef struct {
   char cik[RDK_META_CIK_SIZE];                   // our client interface key
   char server[RDK_META_SERVER_SIZE];             // ip address of m2.exosite.com (not using DNS at this stage)
   char pad0[RDK_META_PAD0_SIZE];                 // pad 'server' to 8 bytes
   char mark[RDK_META_MARK_SIZE];                 // watermark
-  char rsvd[RDK_META_RSVD_SIZE];                 // reserved space - pad to RDK_META_SIZE 
+  char rsvd[RDK_META_RSVD_SIZE];                 // reserved space - pad to ensure mfr is at end of RDK_META_SIZE
+  char mfr[RDK_META_MFR_SIZE];                   // manufacturer data structure
 } rdk_meta;
 
 #define EXOMARK "exosite!"
