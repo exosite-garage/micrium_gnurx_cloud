@@ -13,6 +13,8 @@ source from the cloud to control the on-board LEDs.  Cloud status can be
 displayed on the RDK's LCD screen by pushing SW1, SW2 or SW3.  This project can 
 be re-used, extended and deployed as desired.
 
+License is BSD, Copyright 2011, Exosite LLC (see LICENSE file)
+
 Tested with HEW version 4.09.00.007, including:
 Compiler KPIT GNURX [ELF] Toolchain v11.02  (7-20-2011)
 Renesas Demonstration Kit (RDK) RX62N v3.00 Release 00 (6-15-2011 00:08:55)
