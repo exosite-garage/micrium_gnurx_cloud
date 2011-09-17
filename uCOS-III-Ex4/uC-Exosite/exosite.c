@@ -18,7 +18,7 @@
 *********************************************************************************************************
 */
 #include  "rdk_meta.h"
-
+#include "stdlib.h"
 #include  <includes.h>
 //#include  <iodefine.h>  // alternate MAC address retrieval
 #include <lib_ascii.h>

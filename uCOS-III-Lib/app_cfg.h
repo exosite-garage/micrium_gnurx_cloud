@@ -39,7 +39,7 @@
 #define  BLINKY_TASK_PRIO                               5u
 #define  ACCEL_TASK_PRIO                                5u
 #define  TEMPERATURE_TASK_PRIO                          4u
-#define  APP_FFT_TASK_PRIO                              5u
+#define  APP_FFT_TASK_PRIO                              3u
 
 #define  NET_OS_CFG_TMR_TASK_PRIO                       6u
 #define  NET_OS_CFG_IF_TX_DEALLOC_TASK_PRIO             7u
@@ -58,11 +58,11 @@
 *********************************************************************************************************
 */
 
-#define  APP_TASK_START_STK_SIZE                      200u
+#define  APP_TASK_START_STK_SIZE                      256u
 #define  BLINKY_TASK_STK_SIZE                         512u
 #define  ACCEL_TASK_STK_SIZE                          512u
 #define  TEMPERATURE_TASK_STK_SIZE                    512u
-#define  APP_FFT_TASK_STK_SIZE                        400u
+#define  APP_FFT_TASK_STK_SIZE                        320u
 #define  CLOUD_DATA_TASK_STK_SIZE                     512u
 
 #define  NET_OS_CFG_TMR_TASK_STK_SIZE                 768u
@@ -81,7 +81,7 @@
 */
 
 #define  NET_OS_CFG_IF_LOOPBACK_Q_SIZE                  5u
-#define  NET_OS_CFG_IF_RX_Q_SIZE                       10u
+#define  NET_OS_CFG_IF_RX_Q_SIZE                       14u
 #define  NET_OS_CFG_IF_TX_DEALLOC_Q_SIZE               10u
 
 /*

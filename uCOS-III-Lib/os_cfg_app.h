@@ -1,28 +1,32 @@
 /*
 ************************************************************************************************************************
-*                                                     uC/OS-III
-*                                                The Real-Time Kernel
+*                                                      uC/OS-III
+*                                                 The Real-Time Kernel
 *
-*                                  (c) Copyright 2009-2010; Micrium, Inc.; Weston, FL
-*                          All rights reserved.  Protected by international copyright laws.
+*                                  (c) Copyright 2009-2011; Micrium, Inc.; Weston, FL
+*                           All rights reserved.  Protected by international copyright laws.
 *
 *                                       OS CONFIGURATION (APPLICATION SPECIFICS)
 *
 * File    : OS_CFG_APP.H
 * By      : JJL
-* Version : V3.01.2
+* Version : V3.02.00
 *
 * LICENSING TERMS:
 * ---------------
-*               uC/OS-III is provided in source form to registered licensees ONLY.  It is 
-*               illegal to distribute this source code to any third party unless you receive 
-*               written permission by an authorized Micrium representative.  Knowledge of 
-*               the source code may NOT be used to develop a similar product.
+*           uC/OS-III is provided in source form for FREE short-term evaluation, for educational use or 
+*           for peaceful research.  If you plan or intend to use uC/OS-III in a commercial application/
+*           product then, you need to contact Micrium to properly license uC/OS-III for its use in your 
+*           application/product.   We provide ALL the source code for your convenience and to help you 
+*           experience uC/OS-III.  The fact that the source is provided does NOT mean that you can use 
+*           it commercially without paying a licensing fee.
 *
-*               Please help us continue to provide the Embedded community with the finest
-*               software available.  Your honesty is greatly appreciated.
+*           Knowledge of the source code may NOT be used to develop a similar product.
 *
-*               You can contact us at www.micrium.com.
+*           Please help us continue to provide the embedded community with the finest software available.
+*           Your honesty is greatly appreciated.
+*
+*           You can contact us at www.micrium.com, or by phone at +1 (954) 217-2036.
 ************************************************************************************************************************
 */
 
@@ -37,7 +41,7 @@
 
                                                             /* --------------------- MISCELLANEOUS ------------------ */
 #define  OS_CFG_MSG_POOL_SIZE            100u               /* Maximum number of messages                             */
-#define  OS_CFG_ISR_STK_SIZE             320u               /* Stack size of ISR stack (number of CPU_STK elements)   */
+#define  OS_CFG_ISR_STK_SIZE               0u               /* Stack size of ISR stack (number of CPU_STK elements)   */
 #define  OS_CFG_TASK_STK_LIMIT_PCT_EMPTY  10u               /* Stack limit position in percentage to empty            */
 
 
@@ -52,7 +56,7 @@
 
                                                             /* ------------------- STATISTIC TASK ------------------- */
 #define  OS_CFG_STAT_TASK_PRIO            11u               /* Priority                                               */
-#define  OS_CFG_STAT_TASK_RATE_HZ         10u               /* Rate of execution (10 Hz Typ.)                         */
+#define  OS_CFG_STAT_TASK_RATE_HZ         10u               /* Rate of execution (1 to 10 Hz)                         */
 #define  OS_CFG_STAT_TASK_STK_SIZE       320u               /* Stack size (number of CPU_STK elements)                */
 
 

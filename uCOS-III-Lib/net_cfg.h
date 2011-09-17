@@ -3,7 +3,7 @@
 *                                             uC/TCP-IP V2
 *                                      The Embedded TCP/IP Suite
 *
-*                          (c) Copyright 2003-2010; Micrium, Inc.; Weston, FL
+*                          (c) Copyright 2003-2011; Micrium, Inc.; Weston, FL
 *
 *               All rights reserved.  Protected by international copyright laws.
 *
@@ -27,9 +27,10 @@
 *                                              TEMPLATE
 *
 * Filename      : net_cfg.h
-* Version       : V2.10
+* Version       : V2.11.02
 * Programmer(s) : ITJ
 *                 SR
+*                 SL
 *********************************************************************************************************
 */
 
@@ -256,23 +257,15 @@
 *********************************************************************************************************
 *                                NETWORK INTERFACE LAYER CONFIGURATION
 *
-* Note(s) : (1) (a) Configure NET_IF_CFG_LOOPBACK_EN to enable/disable the      network loopback interface.
-*
-*               (b) Configure NET_IF_CFG_&&&_EN      to enable/disable specific network interface(s).
+* Note(s) : (1) Configure NET_IF_CFG_&&&_EN to enable/disable specific network interface(s).
 *********************************************************************************************************
 */
 
 #define  NET_IF_CFG_MAX_NBR_IF                             1u   /* Configure maximum number of network interfaces.      */
 
-
-                                                                /* Configure loopback interface    (see Note #1a) :     */
+                                                                /* Configure specific interface(s) [see Note #1] :      */
 #define  NET_IF_CFG_LOOPBACK_EN                 DEF_DISABLED
-                                                                /*   DEF_DISABLED      Loopback interface DISABLED      */
-                                                                /*   DEF_ENABLED       Loopback interface ENABLED       */
-
-                                                                /* Configure specific interface(s) [see Note #1b] :     */
 #define  NET_IF_CFG_ETHER_EN                    DEF_ENABLED
-
 
                                                                 /* Configure network interface address filter feature : */
 #define  NET_IF_CFG_ADDR_FLTR_EN                DEF_ENABLED
@@ -432,7 +425,7 @@
                                                                 /*                                 Next  by Application */
 
                                                                 /* Configure UDP Receive Check-Sum Discard feature ...  */
-                                                                /* ... (see Note #2b)                                   */
+                                                                /* ... (see Note #2b) :                                 */
 #define  NET_UDP_CFG_RX_CHK_SUM_DISCARD_EN      DEF_DISABLED
                                                                 /*   DEF_DISABLED  UDP Datagrams  Received without ...  */
                                                                 /*                     Check-Sums Validated             */
@@ -537,13 +530,11 @@
 #define  NET_SOCK_CFG_NBR_SOCK                            10    /* Configure total number of sockets.                   */
 
 
-                                                                /* Configure socket blocking/non-blocking behavior :    */
+                                                                /* Configure socket default blocking behavior :         */
 #define  NET_SOCK_CFG_BLOCK_SEL                 NET_SOCK_BLOCK_SEL_BLOCK
-                                                                /*   NET_SOCK_BLOCK_SEL_DFLT       Default blocking;    */
-                                                                /*                                 ... run-time options */
-                                                                /*                                 ... can override     */
-                                                                /*   NET_SOCK_BLOCK_SEL_BLOCK      Always  block        */
-                                                                /*   NET_SOCK_BLOCK_SEL_NO_BLOCK   Never   block        */
+                                                                /*   NET_SOCK_BLOCK_SEL_DFLT /                          */
+                                                                /*   NET_SOCK_BLOCK_SEL_BLOCK      Blocking ENABLED     */
+                                                                /*   NET_SOCK_BLOCK_SEL_NO_BLOCK   Blocking DISABLED    */
 
 
                                                                 /* Configure socket select functionality :              */
@@ -570,6 +561,101 @@
 #define  NET_SOCK_CFG_TIMEOUT_CONN_ACCEPT_MS    NET_TMR_TIME_INFINITE
                                                                 /* Configure socket connection close   timeout.         */
 #define  NET_SOCK_CFG_TIMEOUT_CONN_CLOSE_MS            10000u
+
+
+/*$PAGE*/
+/*
+*********************************************************************************************************
+*                               NETWORK SECURITY MANAGER CONFIGURATION
+*
+* Note(s) : (1) Configure NET_SECURE_CFG_EN    to enable/disable network security management.
+*
+*           (2) Configure NET_SECURE_CFG_FS_EN to enable/disable network security management file system 
+*               functionality.
+*
+*           (3) Configure NET_SECURE_CFG_WORD_SIZE for optimized word size for security port, if applicable.
+*
+*           (4) (a) Configure NET_SECURE_CFG_CLIENT_DOWNGRADE_EN to enable/disable client downgrade option.
+*
+*                   If NET_SECURE_CFG_CLIENT_DOWNGRADE_EN is DEF_ENABLED, client applications will be
+*                   allowed to connect on server that is using a SSL/TLS version older than 
+*                   NET_SECURE_CFG_VER.
+*
+*                   It is recommended to configure NET_SECURE_CFG_CLIENT_DOWNGRADE_EN to DEF_DISABLED.  
+*                   If a client is running SSL V3.0, he MIGHT NOT want to exchange secure information 
+*                   with a server  running SSL V2.0 because there is important security leakage in 
+*                   that version of the protocol.
+*
+*               (b) Configure NET_SECURE_CFG_SERVER_DOWNGRADE_EN to enable/disable server downgrade option.
+*
+*                   If NET_SECURE_CFG_SERVER_DOWNGRADE_EN is DEF_ENABLED, server applications will be 
+*                   able to accept connection requests coming from clients that are using a SSL/TLS 
+*                   version older than NET_SECURE_CFG_VER.
+*
+*                   It is recommended to configure NET_SECURE_CFG_CLIENT_DOWNGRADE_EN to DEF_ENABLED 
+*                   since the client is responsible of choosing a SSL/TLS protocol version that matches 
+*                   its security requirements.
+*
+*           (5) The common name is chosen during the creation of the certificate (e.g. 'Micrium',
+*               'Google', 'Paypal', etc.).
+*
+*           (6) The public key is a part of the public key certificate.  The length of the public
+*               key is chosen during the creation of the certificate.
+*********************************************************************************************************
+*/
+/*$PAGE*/
+                                                                /* Configure Network Security Manager (see Note #1) :   */
+#define  NET_SECURE_CFG_EN                      DEF_DISABLED
+                                                                /*   DEF_DISABLED   Network security manager DISABLED   */
+                                                                /*   DEF_ENABLED    Network security manager ENABLED    */
+
+                                                                /* Configure File System feature(s) [see Note #2] :     */
+#define  NET_SECURE_CFG_FS_EN                   DEF_DISABLED
+                                                                /*   DEF_DISABLED   File System feature(s) DISABLED     */
+                                                                /*   DEF_ENABLED    File System feature(s) ENABLED      */
+
+
+                                                                /* Configure secure protocol version :                  */
+#define  NET_SECURE_CFG_VER                     NET_SECURE_SSL_V3_0
+                                                                /*   NET_SECURE_SSL_V2_0   SSL V2.0                     */
+                                                                /*   NET_SECURE_SSL_V3_0   SSL V3.0                     */
+                                                                /*   NET_SECURE_TLS_V1_0   TLS V1.0                     */
+                                                                /*   NET_SECURE_TLS_V1_1   TLS V1.1                     */
+                                                                /*   NET_SECURE_TLS_V1_2   TLS V1.2                     */
+
+                                                                /* Configure network security word size (see Note #3) : */
+#define  NET_SECURE_CFG_WORD_SIZE               CPU_WORD_SIZE_32
+                                                                /*   CPU_WORD_SIZE_08    8-bit word size                */
+                                                                /*   CPU_WORD_SIZE_16   16-bit word size                */
+                                                                /*   CPU_WORD_SIZE_32   32-bit word size                */
+                                                                /*   CPU_WORD_SIZE_64   64-bit word size                */
+
+
+                                                                /* Configure client downgrade option (see Note #4a) :   */
+#define  NET_SECURE_CFG_CLIENT_DOWNGRADE_EN     DEF_DISABLED
+                                                                /*   DEF_DISABLED   Client downgrade DISABLED           */
+                                                                /*   DEF_ENABLED    Client downgrade ENABLED            */
+
+                                                                /* Configure server downgrade option (see Note #4b) :   */
+#define  NET_SECURE_CFG_SERVER_DOWNGRADE_EN     DEF_ENABLED
+                                                                /*   DEF_DISABLED   Server downgrade DISABLED           */
+                                                                /*   DEF_ENABLED    Server downgrade ENABLED            */
+
+
+#define  NET_SECURE_CFG_MAX_NBR_SOCK                       5u   /* Configure maximum number of sockets to secure.       */
+
+                                                                /* Configure maximum number of certificate authorities  */
+#define  NET_SECURE_CFG_MAX_NBR_CA                         1u   /* ... that can be installed.                           */
+
+
+                                                                /* Configure maximum length (in octets) of ...          */
+#define  NET_SECURE_CFG_MAX_KEY_LEN                     1500u   /* ... certificate authority, certificates & keys.      */
+
+                                                                /* Configure maximum length (in octets) of common name  */
+#define  NET_SECURE_CFG_MAX_ISSUER_CN_LEN                 20u   /* ... (see Note #5).                                   */
+
+                                                                /* Configure maximum length (in octets) of public key   */
+#define  NET_SECURE_CFG_MAX_PUBLIC_KEY_LEN               256u   /* ... (see Note #6).                                   */
 
 
 /*$PAGE*/

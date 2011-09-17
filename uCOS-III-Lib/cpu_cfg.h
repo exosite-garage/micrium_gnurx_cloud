@@ -3,7 +3,7 @@
 *                                                uC/CPU
 *                                    CPU CONFIGURATION & PORT LAYER
 *
-*                          (c) Copyright 2004-2010; Micrium, Inc.; Weston, FL
+*                          (c) Copyright 2004-2011; Micrium, Inc.; Weston, FL
 *
 *               All rights reserved.  Protected by international copyright laws.
 *
@@ -27,7 +27,7 @@
 *                                              TEMPLATE
 *
 * Filename      : cpu_cfg.h
-* Version       : V1.26
+* Version       : V1.29.00
 * Programmer(s) : SR
 *                 ITJ
 *********************************************************************************************************
@@ -66,7 +66,7 @@
                                                                 /*   DEF_ENABLED   CPU host name ENABLED                */
 
                                                                 /* Configure CPU host name ASCII string size ...        */
-#define  CPU_CFG_NAME_SIZE                                16u   /* ... (see Note #2).                                   */
+#define  CPU_CFG_NAME_SIZE                                16    /* ... (see Note #2).                                   */
 
 
 /*$PAGE*/
@@ -117,8 +117,7 @@
 *
 *                   (b) Disabled,       if CPU_CFG_INT_DIS_MEAS_EN  NOT #define'd in 'cpu_cfg.h'
 *
-*                   See also 'cpu_core.h  FUNCTION PROTOTYPES  Note #1'
-*                          & 'cpu_core.h  CPU INCLUDE FILES    Note #3'.
+*                   See also 'cpu_core.h  FUNCTION PROTOTYPES  Note #1'.
 *
 *               (b) Configure CPU_CFG_INT_DIS_MEAS_OVRHD_NBR with the number of times to measure & 
 *                   average the interrupts disabled time measurements overhead.
@@ -143,24 +142,34 @@
 /*$PAGE*/
 /*
 *********************************************************************************************************
-*                                CPU COUNT LEADING ZEROS CONFIGURATION
+*                                    CPU COUNT ZEROS CONFIGURATION
 *
-* Note(s) : (1) Configure CPU_CFG_LEAD_ZEROS_ASM_PRESENT to prototype/define count leading zeros bits 
-*               function(s) in :
+* Note(s) : (1) (a) Configure CPU_CFG_LEAD_ZEROS_ASM_PRESENT  to define count leading  zeros bits 
+*                   function(s) in :
 *
-*               (a) 'cpu.h'/'cpu_a.asm',       if CPU_CFG_LEAD_ZEROS_ASM_PRESENT      #define'd in 'cpu.h'/
-*                                                 'cpu_cfg.h' to enable assembly-version function(s)
+*                   (1) 'cpu_a.asm',  if CPU_CFG_LEAD_ZEROS_ASM_PRESENT       #define'd in 'cpu.h'/
+*                                         'cpu_cfg.h' to enable assembly-optimized function(s)
 *
-*               (b) 'cpu_core.h'/'cpu_core.c', if CPU_CFG_LEAD_ZEROS_ASM_PRESENT  NOT #define'd in 'cpu.h'/
-*                                                 'cpu_cfg.h' to enable C-source-version function(s) otherwise
+*                   (2) 'cpu_core.c', if CPU_CFG_LEAD_ZEROS_ASM_PRESENT   NOT #define'd in 'cpu.h'/
+*                                         'cpu_cfg.h' to enable C-source-optimized function(s) otherwise
 *
-*               See also 'cpu_core.h  FUNCTION PROTOTYPES  Note #2'
-*                      & 'cpu_core.h  CPU INCLUDE FILES    Note #3'.
+*               (b) Configure CPU_CFG_TRAIL_ZEROS_ASM_PRESENT to define count trailing zeros bits 
+*                   function(s) in :
+*
+*                   (1) 'cpu_a.asm',  if CPU_CFG_TRAIL_ZEROS_ASM_PRESENT      #define'd in 'cpu.h'/
+*                                         'cpu_cfg.h' to enable assembly-optimized function(s)
+*
+*                   (2) 'cpu_core.c', if CPU_CFG_TRAIL_ZEROS_ASM_PRESENT  NOT #define'd in 'cpu.h'/
+*                                         'cpu_cfg.h' to enable C-source-optimized function(s) otherwise
 *********************************************************************************************************
 */
 
-#if 0                                                           /* Configure CPU count leading zeros bits ...           */
-#define  CPU_CFG_LEAD_ZEROS_ASM_PRESENT                         /* ... assembly-version (see Note #1).                  */
+#if 0                                                           /* Configure CPU count leading  zeros bits ...          */
+#define  CPU_CFG_LEAD_ZEROS_ASM_PRESENT                         /* ... assembly-version (see Note #1a).                 */
+#endif
+
+#if 0                                                           /* Configure CPU count trailing zeros bits ...          */
+#define  CPU_CFG_TRAIL_ZEROS_ASM_PRESENT                        /* ... assembly-version (see Note #1b).                 */
 #endif
 
 

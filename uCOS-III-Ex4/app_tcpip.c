@@ -81,6 +81,8 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                             DEF_NO,
                             DEF_YES,
                            &err_msg[12]);
+         BSP_GraphLCD_ClrLine(4);
+         BSP_GraphLCD_ClrLine(5);
          BSP_GraphLCD_String(4, "Net Init failed!");
          BSP_GraphLCD_String(5, err_msg);
          return;
@@ -102,6 +104,8 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                             DEF_NO,
                             DEF_YES,
                            &err_msg[12]);
+         BSP_GraphLCD_ClrLine(4);
+         BSP_GraphLCD_ClrLine(5);
          BSP_GraphLCD_String(4, "NetIF Add failed!");
          BSP_GraphLCD_String(5, err_msg);
          return;
@@ -117,6 +121,8 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                             DEF_NO,
                             DEF_YES,
                            &err_msg[12]);
+         BSP_GraphLCD_ClrLine(4);
+         BSP_GraphLCD_ClrLine(5);
          BSP_GraphLCD_String(4, "Static Addr failed!");
          BSP_GraphLCD_String(5, err_msg);
          return;
@@ -132,6 +138,8 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                             DEF_NO,
                             DEF_YES,
                            &err_msg[12]);
+         BSP_GraphLCD_ClrLine(4);
+         BSP_GraphLCD_ClrLine(5);
          BSP_GraphLCD_String(4, "NetIF Start failed!");
          BSP_GraphLCD_String(5, err_msg);
          return;
@@ -141,6 +149,7 @@ void  AppTCPIP_Init (NET_ERR  *perr)
     link_state = NetIF_LinkStateGet(if_nbr,                     /* Chk link state.                                      */
                                     perr);              
     if (link_state == NET_IF_LINK_DOWN) {
+        BSP_GraphLCD_ClrLine(4);
         BSP_GraphLCD_String(4, "Ethernet Link Down!");
 
         timeout      =  30u;
@@ -158,6 +167,7 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                               DEF_NO,
                               DEF_NO,
                              &retry_msg[13]);
+            BSP_GraphLCD_ClrLine(5);
             BSP_GraphLCD_String(5, retry_msg);
 
             timeout--;
@@ -168,8 +178,10 @@ void  AppTCPIP_Init (NET_ERR  *perr)
         }
 
         if (link_state == NET_IF_LINK_UP) {
+            BSP_GraphLCD_ClrLine(4);
             BSP_GraphLCD_String(4, "Ethernet Link Up!");
         }
+        BSP_GraphLCD_ClrLine(5);
         BSP_GraphLCD_String(5, "");
     }
     if (*perr == NET_IF_ERR_NONE) {                             /* Translate successful return error to NET_ERR_NONE.   */
@@ -177,6 +189,7 @@ void  AppTCPIP_Init (NET_ERR  *perr)
     }
 
 #if (APP_CFG_DHCPc_MODULE_EN == 0u)                             /* ---------------- MANUALLY CFG'D ADDR --------------- */
+    BSP_GraphLCD_ClrLine(4);
     BSP_GraphLCD_String(4, "Manually Configured");
     AppGraphLCD_IPAddr(if_nbr);
 #else
@@ -190,6 +203,8 @@ void  AppTCPIP_Init (NET_ERR  *perr)
                           DEF_NO,
                           DEF_YES,
                          &err_msg[12]);
+        BSP_GraphLCD_ClrLine(4);
+        BSP_GraphLCD_ClrLine(5);
         BSP_GraphLCD_String(4, "DHCPc Init failed!");
         BSP_GraphLCD_String(5, err_msg);
         return;
@@ -314,9 +329,12 @@ static  void  AppDHCPc_Init (DHCPc_ERR  *perr)
                          if (show == DEF_TRUE) {
                              show  = DEF_FALSE;
 
+                             BSP_GraphLCD_ClrLine(4);
+                             BSP_GraphLCD_ClrLine(5);
                              BSP_GraphLCD_StringPos(4, 1, "Acquiring Network");
                              BSP_GraphLCD_StringPos(5, 6, "Address");
                          }
+                         BSP_GraphLCD_ClrLine(6);
                          BSP_GraphLCD_StringPos(6, 6 + col, ".");
                          break;
 
@@ -324,6 +342,7 @@ static  void  AppDHCPc_Init (DHCPc_ERR  *perr)
                          if_dhcp_init_tbl[if_done_ix] = DEF_YES;
                          nbr_if_init++;
 
+                         BSP_GraphLCD_ClrLine(4);
                          BSP_GraphLCD_String(4, "Assigned by DHCP");
                          AppGraphLCD_IPAddr(if_nbr_cur);
                          break;
@@ -335,6 +354,7 @@ static  void  AppDHCPc_Init (DHCPc_ERR  *perr)
                                                 &err_addr_cfg);
                         (void)&err_addr_cfg;
 
+                         BSP_GraphLCD_ClrLine(4);
                          BSP_GraphLCD_String(4, "Assigned by DHCP*");
                          AppGraphLCD_IPAddr(if_nbr_cur);
                          break;
@@ -343,6 +363,7 @@ static  void  AppDHCPc_Init (DHCPc_ERR  *perr)
                          if_dhcp_init_tbl[if_done_ix] = DEF_YES;
                          nbr_if_init++;
 
+                         BSP_GraphLCD_ClrLine(4);
                          BSP_GraphLCD_String(4, "Link-Local Address");
                          AppGraphLCD_IPAddr(if_nbr_cur);
                          break;
@@ -354,6 +375,7 @@ static  void  AppDHCPc_Init (DHCPc_ERR  *perr)
                                                 &err_addr_cfg);
                         (void)&err_addr_cfg;
 
+                         BSP_GraphLCD_ClrLine(4);
                          BSP_GraphLCD_String(4, "Manually Configured");
                          AppGraphLCD_IPAddr(if_nbr_cur);
                          break;
@@ -511,6 +533,10 @@ static  void  AppGraphLCD_IPAddr (NET_IF_NBR  if_nbr)
                                                 &net_err);
         gateway_addr = NetIP_GetAddrDfltGateway(ip_addr_tbl[0],
                                                 &net_err);
+
+        BSP_GraphLCD_ClrLine(5);
+        BSP_GraphLCD_ClrLine(6);
+        BSP_GraphLCD_ClrLine(7);
 
         str_addr[0] = ASCII_CHAR_NULL;
         Str_Copy(str_addr, "IP: ");

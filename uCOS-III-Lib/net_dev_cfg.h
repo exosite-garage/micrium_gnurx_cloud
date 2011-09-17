@@ -3,7 +3,7 @@
 *                                             uC/TCP-IP V2
 *                                      The Embedded TCP/IP Suite
 *
-*                          (c) Copyright 2003-2010; Micrium, Inc.; Weston, FL
+*                          (c) Copyright 2003-2011; Micrium, Inc.; Weston, FL
 *
 *               All rights reserved.  Protected by international copyright laws.
 *
@@ -27,7 +27,7 @@
 *                                              TEMPLATE
 *
 * Filename      : net_dev_cfg.h
-* Version       : V2.10
+* Version       : V2.11.02
 * Programmer(s) : EHS
 *                 FGK
 *                 ITJ
@@ -95,6 +95,8 @@ extern  const  NET_PHY_CFG_ETHER  NetPhy_Cfg_Generic_0;     /* Ethernet Phy conf
 /*
 *********************************************************************************************************
 *                                             MODULE END
+*
+* Note(s) : (1) See 'net_dev_cfg.h  MODULE'.
 *********************************************************************************************************
 */
 

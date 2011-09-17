@@ -3,7 +3,7 @@
 *                                              uC/HTTPs
 *                                 Hypertext Transfer Protocol (server)
 *
-*                          (c) Copyright 2004-2010; Micrium, Inc.; Weston, FL
+*                          (c) Copyright 2004-2011; Micrium, Inc.; Weston, FL
 *
 *               All rights reserved.  Protected by international copyright laws.
 *
@@ -27,7 +27,7 @@
 *                                              TEMPLATE
 *
 * Filename      : http-s_cfg.h
-* Version       : V1.95
+* Version       : V1.97.00
 * Programmer(s) : JDH
 *                 SR
 *********************************************************************************************************
@@ -43,7 +43,8 @@
 *********************************************************************************************************
 */
 
-#define  HTTPs_CFG_IPPORT                                 80    /* HTTP server port. Default is 80.                     */
+#define  HTTPs_CFG_IPPORT                                 80    /* HTTPs        IP port. Default is 80.                 */
+#define  HTTPs_CFG_IPPORT_SECURE                         443    /* HTTPs Secure IP port. Default is 443.                */
 
                                                                 /* See Note #1.                                         */
 #define  HTTPs_CFG_MAX_ACCEPT_TIMEOUT_MS                5000    /* Maximum inactivity time (ms) on ACCEPT.              */

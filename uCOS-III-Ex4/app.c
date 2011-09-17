@@ -20,6 +20,7 @@
 
 #include <includes.h>
 
+#include "stdlib.h"
 #include "iodefine.h"
 #include "inthandler.h"
 #include "rtadsplib.h"                                          /* API header file for SP library                       */
@@ -246,8 +247,12 @@ static  void  AppTaskStart (void *p_arg)
     AppGraphLCD_Hdr();
 
     while (DEF_ON) {
+        BSP_GraphLCD_ClrLine(5);
+        BSP_GraphLCD_ClrLine(6);
+        BSP_GraphLCD_ClrLine(7);
+        
         if (AppFreqSetpointSel == 0){
-            BSP_GraphLCD_String(5, "SRC: Pot     ");
+            BSP_GraphLCD_String(5, "SRC: Pot");
         } else {
             BSP_GraphLCD_String(5, "SRC: uC/Probe");
         }
@@ -462,7 +467,7 @@ static  void  AppPWM_Init (void)
 
     MTUA.TOER.BIT.OE4B      = 1;                                /* Enable MTIOC4B as MTU output                         */
 
-    IPR(MTU3, TGIA3)        = 13;                               /* Set interrupt priority.                              */
+    IPR(MTU3, TGIA3)        = 3;                                /* Set interrupt priority.                              */
     IEN(MTU3, TGIA3)        = 1;                                /* Enable interrupt source.                             */
     MTU3.TIER.BIT.TGIEA     = 1;                                /* Enable MTU3 TGIA interrupt                           */
 

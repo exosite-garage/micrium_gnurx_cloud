@@ -3,7 +3,7 @@
 *                                             uC/DHCPc V2
 *                              Dynamic Host Configuration Protocol Client
 *
-*                          (c) Copyright 2004-2010; Micrium, Inc.; Weston, FL
+*                          (c) Copyright 2004-2011; Micrium, Inc.; Weston, FL
 *
 *               All rights reserved.  Protected by international copyright laws.
 *
@@ -27,7 +27,7 @@
 *                                              TEMPLATE
 *
 * Filename      : dhcp-c_cfg.h
-* Version       : V2.08
+* Version       : V2.08.02
 * Programmer(s) : SR
 *********************************************************************************************************
 */
@@ -39,8 +39,8 @@
 *********************************************************************************************************
 */
 
-#define  DHCPc_OS_CFG_TASK_PRIO                           13u
-#define  DHCPc_OS_CFG_TMR_TASK_PRIO                       14u
+#define  DHCPc_OS_CFG_TASK_PRIO                           13
+#define  DHCPc_OS_CFG_TMR_TASK_PRIO                       14
 
 
 /*
@@ -50,8 +50,8 @@
 *********************************************************************************************************
 */
 
-#define  DHCPc_OS_CFG_TASK_STK_SIZE                     1024u
-#define  DHCPc_OS_CFG_TMR_TASK_STK_SIZE                  384u
+#define  DHCPc_OS_CFG_TASK_STK_SIZE                      640
+#define  DHCPc_OS_CFG_TMR_TASK_STK_SIZE                  256
 
 
 /*$PAGE*/
@@ -76,18 +76,18 @@
 *********************************************************************************************************
 */
 
-#define  DHCPc_CFG_IP_PORT_SERVER                         67u   /* Configure DHCP server port            (see Note #1). */
-#define  DHCPc_CFG_IP_PORT_CLIENT                         68u   /* Configure DHCP client port            (see Note #1). */
+#define  DHCPc_CFG_IP_PORT_SERVER                         67    /* Configure DHCP server port            (see Note #1). */
+#define  DHCPc_CFG_IP_PORT_CLIENT                         68    /* Configure DHCP client port            (see Note #1). */
 
-#define  DHCPc_CFG_MAX_RX_TIMEOUT_MS                    5000u   /* Maximum inactivity time (ms) on receive.             */
+#define  DHCPc_CFG_MAX_RX_TIMEOUT_MS                    2000    /* Maximum inactivity time (ms) on receive.             */
 
 #define  DHCPc_CFG_BROADCAST_BIT_EN              DEF_ENABLED    /* Configure broadcast bit               (see Note #2) :*/
                                                                 /*   DEF_DISABLED  Broadcast bit NOT set                */
                                                                 /*   DEF_ENABLED   Broadcast bit     set                */
 
-#define  DHCPc_CFG_PARAM_REQ_TBL_SIZE                      5u   /* Configure requested parameter table size.            */
+#define  DHCPc_CFG_PARAM_REQ_TBL_SIZE                      5    /* Configure requested parameter table size.            */
 
-#define  DHCPc_CFG_MAX_NBR_IF                              1u   /* Configure maximum number of interface (see Note #3). */
+#define  DHCPc_CFG_MAX_NBR_IF                              1    /* Configure maximum number of interface (see Note #3). */
 
 #define  DHCPc_CFG_ADDR_VALIDATE_EN              DEF_ENABLED    /* Configure final check on assigned address ...        */
                                                                 /* ... (see Note #4) :                                  */
@@ -98,7 +98,7 @@
                                                                 /*   DEF_DISABLED  local-link configuration DISABLED    */
                                                                 /*   DEF_ENABLED   local-link configuration ENABLED     */
 
-#define  DHCPc_CFG_LOCAL_LINK_MAX_RETRY                    3u   /* Configure maximum number of retry to get a           */
+#define  DHCPc_CFG_LOCAL_LINK_MAX_RETRY                    2    /* Configure maximum number of retry to get a           */
                                                                 /* link-local address.                                  */
 
 

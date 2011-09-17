@@ -45,7 +45,12 @@ documentation at http://tinyurl.com/28cphut
 Release Info
 ========================================
 ----------------------------------------
-Release 2011-09-1
+Release 2011-09-14
+----------------------------------------
+--) minor updates to support latest Micrium RX release<br>
+
+----------------------------------------
+Release 2011-09-11
 ----------------------------------------
 --) must push switch buttons to display cloud status<br>
 
