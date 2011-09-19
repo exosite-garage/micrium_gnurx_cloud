@@ -1,0 +1,34 @@
+;********************************************************************************************************
+;                                          AUDIO APPLICATION
+;
+;                            (c) Copyright 2011; Micrium, Inc.; Weston, FL
+;                    All rights reserved.  Protected by international copyright laws.
+;
+;                                             Renesas RX
+;
+; File    : AUDIO_A.SRC
+;********************************************************************************************************
+
+
+    .include    "os_cpu_a.inc"          ; Include OS_ISR_ENTER and OS_ISR_EXIT macros
+
+    .global     _AudioCallbackISR
+    .global     _AudioCallbackHandler
+
+;/*$PAGE*/
+;********************************************************************************************************
+;                                         AudioCallbackISR()
+;********************************************************************************************************
+
+    .section    .text
+
+_AudioCallbackISR:
+    OS_ISR_ENTER                        ; Save context & Notify uC/OS about ISR
+
+    MOV.L   #_AudioCallbackHandler, R5
+    JSR     R5
+
+    OS_ISR_EXIT                         ; Restore context
+
+    .END
+
