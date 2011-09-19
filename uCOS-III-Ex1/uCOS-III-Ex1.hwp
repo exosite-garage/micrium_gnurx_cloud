@@ -1,0 +1,552 @@
+[HIMDBVersion]
+2.0
+[DATABASE_VERSION]
+"2.8" 
+[PROJECT_DETAILS]
+"uCOS-III-Ex1" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uCOS-III-Ex1.hwp" "RX" "KPIT GNURX [ELF]" "C Application" "RX600" "Other" 
+[INFORMATION]
+"No project information available" 
+[TOOL_CHAIN]
+"KPIT GNURX [ELF] Toolchain" "v11.02" 
+[CONFIGURATIONS]
+"Debug" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Debug" 
+"Release" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Release" 
+[BUILD_PHASES]
+"GNU Assembler" 1 
+"GNU Compiler" 1 
+"GNU Library Generator" 1 
+"GNU Linker" 1 
+[TOOL_ENVIRONMENT]
+[EXTENSIONS]
+"Absolute file" "ABS" 
+"Archive File" "A" 
+"Assembly include file" "INC" 
+"Assembly list file" "LIS" 
+"Assembly source file" "S" 
+"Assembly source file" "SRC" 
+"Binary file" "BIN" 
+"C header file" "H" 
+"C list file" "LST" 
+"C source file" "C" 
+"C++ header file" "HPP" 
+"C++ list file" "LPP" 
+"C++ source file" "CC" 
+"C++ source file" "CP" 
+"C++ source file" "CPP" 
+"CPU information file" "CPU" 
+"Calling information file" "CAL" 
+"Debug information file" "DBG" 
+"Expanded assembly source file" "EXP" 
+"Hex file" "HEX" 
+"Library file" "LIB" 
+"Library information file" "LBP" 
+"Linkage map file" "MAP" 
+"Object file" "OBJ" 
+"Optimize map file" "bls" 
+"Preprocess Assembly file" "ASM" 
+"Preprocessed C source file" "P" 
+"Preprocessed C++ source file" "PP" 
+"Profile file" "PRO" 
+"Relocatable file" "REL" 
+"Rts information file" "RTS" 
+"S-Record file" "MOT" 
+"Stack information file" "SNI" 
+"TD include object file" "RTI" 
+[FILE_GROUPS]
+"Absolute file" "BIN" "NONE" "" 
+"Archive File" "BIN" "NONE" "" 
+"Assembly include file" "TEXT" "EDITOR" "" 
+"Assembly list file" "TEXT" "EDITOR" "" 
+"Assembly source file" "TEXT" "EDITOR" "" 
+"Binary file" "BIN" "NONE" "" 
+"C header file" "TEXT" "EDITOR" "" 
+"C list file" "TEXT" "EDITOR" "" 
+"C source file" "TEXT" "EDITOR" "" 
+"C++ header file" "TEXT" "EDITOR" "" 
+"C++ list file" "TEXT" "EDITOR" "" 
+"C++ source file" "TEXT" "EDITOR" "" 
+"CPU information file" "BIN" "NONE" "" 
+"Calling information file" "BIN" "NONE" "" 
+"Debug information file" "BIN" "NONE" "" 
+"Expanded assembly source file" "TEXT" "EDITOR" "" 
+"Hex file" "TEXT" "EDITOR" "" 
+"Library file" "BIN" "NONE" "" 
+"Library information file" "TEXT" "EDITOR" "" 
+"Linkage map file" "TEXT" "EDITOR" "" 
+"Object file" "BIN" "NONE" "" 
+"Optimize map file" "BIN" "NONE" "" 
+"Preprocess Assembly file" "TEXT" "EDITOR" "" 
+"Preprocessed C source file" "TEXT" "EDITOR" "" 
+"Preprocessed C++ source file" "TEXT" "EDITOR" "" 
+"Profile file" "BIN" "NONE" "" 
+"Relocatable file" "BIN" "NONE" "" 
+"Rts information file" "BIN" "NONE" "" 
+"S-Record file" "TEXT" "EDITOR" "" 
+"Stack information file" "BIN" "NONE" "" 
+"TD include object file" "BIN" "NONE" "" 
+[ASSOCIATED_APPLICATIONS]
+[TOOLCHAIN_PHASE]
+"GNU Assembler" 
+"GNU Compiler" 
+"GNU Library Generator" 
+"GNU Linker" 
+[UTILITY_PHASE]
+[CUSTOM_PHASES]
+[CUSTOM_PHASE_INPUT_GROUP]
+[CUSTOM_PHASE_OUTPUT_SYNTAX]
+[BUILD_ORDER]
+"GNU Library Generator" 1 
+"GNU Compiler" 1 
+"GNU Assembler" 1 
+"GNU Linker" 1 
+[BUILD_PHASE_DETAILS]
+"GNU Assembler" "Assembly source file" 1 
+"GNU Compiler" "C source file|C++ source file|Preprocess Assembly file" 1 
+"GNU Library Generator" "" 0 
+"GNU Linker" "Object file|Library file|Relocatable file" 0 
+[BUILD_FILE_ORDER_Assembly source file]
+"GNU Assembler" 1 
+[BUILD_FILE_ORDER_C source file]
+"GNU Compiler" 1 
+[BUILD_FILE_ORDER_C++ source file]
+"GNU Compiler" 1 
+[BUILD_FILE_ORDER_Preprocess Assembly file]
+"GNU Compiler" 1 
+[SCRAP]
+"Project Generator Setup File" "" 
+[MAPPINGS]
+"Assembly source file" "GNU Assembler" "GNU Compiler" 
+"Object file" "GNU Linker" "GNU Assembler" 
+"Object file" "GNU Linker" "GNU Compiler" 
+[PROJECT_FILES]
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\CPU\cpu_bsp.c" "User" "BSP|CPU" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\Glyph.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\Glyph.h" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\GlyphRegister.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\Glyph_cfg.h" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\ST7579_LCD.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\ST7579_LCD.h" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\YRDKRX62N_RSPI0.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\YRDKRX62N_RSPI0.h" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x16.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x8.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_bitmap.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_helvr10.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_symbol.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_winfreesystem14x16.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x5x7.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x6x13.c" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\types.h" "User" "BSP|Glyph" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp.c" "User" "BSP|TCP-IP V2" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp.h" "User" "BSP|TCP-IP V2" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp_a.s" "User" "BSP|TCP-IP V2" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_phy_dp83640.c" "User" "BSP|TCP-IP V2" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_phy_dp83640.h" "User" "BSP|TCP-IP V2" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp.c" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp.h" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adt7420.c" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adt7420.h" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adxl345.c" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adxl345.h" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_glcd.c" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_glcd.h" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_a.s" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_c.c" "User" "BSP" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\uCOS-III\bsp_os.c" "User" "BSP|uCOS-III" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\uCOS-III\bsp_os.h" "User" "BSP|uCOS-III" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\EcoSystems.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\Micrium-uCOS-III-Renesas-RX62N-Book.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\YRDKRX62N_3_GBR.zip" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\YRDKRX62N_3_SCH.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\YRDKRX62N_Micrium_Based_Quick_Start_Guide.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\r01uh0033ej_rx62n.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\rej03b0281_rx62nds.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\rej09b0435_rxsm.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\Docs\reu10b0009_YRDKRX62N_User_Manual.pdf" "User" "Docs" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\hwinit.c" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\inthandler.c" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\inthandler.h" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\iodefine.h" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\start.asm" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\typedefine.h" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\vects.c" "User" "App|Init" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app.c" "User" "App" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_cloud.c" "User" "App" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_probe.c" "User" "App" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_tcpip.c" "User" "App" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\exosite.c" "User" "uC-Exosite" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\flash_api_rx600.c" "User" "uC-Exosite" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\flash_api_rx600.h" "User" "uC-Exosite" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\rdk_meta.c" "User" "uC-Exosite" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\rdk_meta.h" "User" "uC-Exosite" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\app_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\cpu_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\dhcp-c_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\http-s_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\includes.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\net_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\net_dev_cfg.c" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\net_dev_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_app_hooks.c" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_app_hooks.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_cfg_app.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\probe_com_cfg.h" "User" "App|Lib" 2 
+"C:\Micrium\Software\uC-CPU\RX62N\GNURX\cpu.h" "User" "uC-CPU" 2 
+"C:\Micrium\Software\uC-CPU\RX62N\GNURX\cpu_a.s" "User" "uC-CPU" 2 
+"C:\Micrium\Software\uC-CPU\cpu_core.c" "User" "uC-CPU" 2 
+"C:\Micrium\Software\uC-CPU\cpu_core.h" "User" "uC-CPU" 2 
+"C:\Micrium\Software\uC-CPU\cpu_def.h" "User" "uC-CPU" 2 
+"C:\Micrium\Software\uC-DHCPc-V2\Source\dhcp-c.h" "User" "uC-DHCPc" 2 
+"C:\Micrium\Software\uC-LIB\lib_ascii.c" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_ascii.h" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_def.h" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_math.c" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_math.h" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_mem.c" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_mem.h" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_str.c" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-LIB\lib_str.h" "User" "uC-LIB" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\OS\uCOS-III\probe_com_os.c" "User" "uC-Probe" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\OS\uCOS-III\probe_rs232_os.c" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232a.s" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232c.c" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232c.h" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Source\probe_rs232.c" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Source\probe_rs232.h" "User" "uC-Probe|RS-232" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\Source\probe_com.c" "User" "uC-Probe" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\Source\probe_com.h" "User" "uC-Probe" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\OS\uCOS-III\probe_tcpip_os.c" "User" "uC-Probe|TCP-IP" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\Source\probe_tcpip.c" "User" "uC-Probe|TCP-IP" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\Source\probe_tcpip.h" "User" "uC-Probe|TCP-IP" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Dev\Ether\RX-EtherC\RX62N\net_dev_rx_etherc_reg.h" "User" "uC-TCP-IP|Dev" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Dev\Ether\RX-EtherC\net_dev_rx_etherc.h" "User" "uC-TCP-IP|Dev" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\IF\net_if.h" "User" "uC-TCP-IP|IF" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\IF\net_if_ether.h" "User" "uC-TCP-IP|IF" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\IF\net_if_loopback.h" "User" "uC-TCP-IP|IF" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\OS\uCOS-III\net_os.h" "User" "uC-TCP-IP|OS" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_app.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_arp.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_ascii.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_bsd.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_buf.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_cfg_net.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_conn.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_ctr.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_dbg.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_def.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_err.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_icmp.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_igmp.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_ip.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_mgr.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_sock.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_stat.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_tcp.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_tmr.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_type.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_udp.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uC-TCPIP-V2\Source\net_util.h" "User" "uC-TCP-IP|Source" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu.h" "User" "uCOS-III|Port" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_a.inc" "User" "uCOS-III|Port" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_a.s" "User" "uCOS-III|Port" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_c.c" "User" "uCOS-III|Port" 2 
+"C:\Micrium\Software\uCOS-III\Source\os.h" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_cfg_app.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_core.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_dbg.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_flag.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_int.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mem.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_msg.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mutex.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_pend_multi.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_prio.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_q.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_sem.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_stat.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_task.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tick.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_time.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tmr.c" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_type.h" "User" "uCOS-III" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_var.c" "User" "uCOS-III" 2 
+[FOLDER]
+"App" "App" 
+"App|Init" "" 
+"App|Lib" "" 
+"BSP" "BSP" 
+"BSP|CPU" "" 
+"BSP|Glyph" "" 
+"BSP|TCP-IP V2" "" 
+"BSP|uCOS-III" "" 
+"Docs" "Docs" 
+"uC-CPU" "uC-CPU" 
+"uC-DHCPc" "uC-DHCPc" 
+"uC-Exosite" "uC-Exosite" 
+"uC-LIB" "uC-LIB" 
+"uC-Probe" "uC-Probe" 
+"uC-Probe|RS-232" "" 
+"uC-Probe|TCP-IP" "" 
+"uC-TCP-IP" "uC-TCP-IP" 
+"uC-TCP-IP|Dev" "" 
+"uC-TCP-IP|IF" "" 
+"uC-TCP-IP|OS" "" 
+"uC-TCP-IP|Source" "" 
+"uCOS-III" "uCOS-III" 
+"uCOS-III|Port" "" 
+[GENERAL_DATA_PROJECT]
+"FDT_AutoConnect" "0" 
+"FDT_BaseDevice" "" 
+"FDT_BaudRate" "" 
+"FDT_BlockLockConnect" "1" 
+"FDT_BlockLockDisconnect" "1" 
+"FDT_BootMode" "TRUE" 
+"FDT_CKM" "0" 
+"FDT_CKP" "0" 
+"FDT_ClockMode" "-1" 
+"FDT_ClockSync" "00000000" 
+"FDT_Comments" "" 
+"FDT_ConnectionResetSuppression" "FFFFFFFF" 
+"FDT_Device" "" 
+"FDT_DoReadbackVerification" "No" 
+"FDT_DoSecurityProtection" "Prompt" 
+"FDT_DoSecurityProtectionLevel" "00" 
+"FDT_Frequency" "0.0000" 
+"FDT_Interface" "" 
+"FDT_InternalClock" "FALSE" 
+"FDT_KernelPath" "" 
+"FDT_KernelResident" "FALSE" 
+"FDT_McuId" "0" 
+"FDT_MessageLevel" "1" 
+"FDT_PinOutputs" "00000000" 
+"FDT_PinSettings" "00000000" 
+"FDT_Port" "" 
+"FDT_Protection" "1" 
+"FDT_Protocol" "" 
+"FDT_ReinterrogateGenericDevice" "No" 
+"FDT_ResetOnDisconnect" "No" 
+"FDT_ResetPinOutputs" "00000000" 
+"FDT_ResetPinSettings" "00000000" 
+"FDT_SerNumConfigString" "" 
+"FDT_SerNumDllFunction" "" 
+"FDT_SerNumDllLocation" "" 
+"FDT_SerNumEnabled" "FALSE" 
+"FDT_SerNumMemArea" "" 
+"FDT_UPMPinSettings" "00000000" 
+"FDT_UseDefaultBaudRate" "FALSE" 
+"FDT_UseInternalKernel" "TRUE" 
+"FDT_UserPinOutputs" "00000000" 
+"FDT_UserPinSettings" "00000000" 
+"USE_CUSTOM_LINKAGE_ORDER" "0" 
+[ON_DEMAND_COMPONENTS_LOADED]
+[SYNC_SESSION_NAMES]
+[SESSIONS]
+"DefaultSession" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\DefaultSession.hsf" 0 
+"JLink" "C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\JLink.hsf" 0 
+[GENERAL_DATA_SESSION_DefaultSession]
+[GENERAL_DATA_SESSION_JLink]
+[OPTIONS_Debug_GNU Assembler]
+"Assembly source file" "00f8090b8a86cc10" 4 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp_a.s" "00f8090b8a86cc10" 4 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_a.s" "00f8090b8a86cc10" 4 
+"C:\Micrium\Software\uC-CPU\RX62N\GNURX\cpu_a.s" "00f8090b8a86cc10" 4 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232a.s" "00f8090b8a86cc10" 4 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_a.s" "00f8090b8a86cc10" 4 
+[OPTIONS_Debug_GNU Compiler]
+"C source file" "001a946bd7d6cc10" 2 
+"C++ source file" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\CPU\cpu_bsp.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\Glyph.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\GlyphRegister.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\ST7579_LCD.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\YRDKRX62N_RSPI0.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x16.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x8.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_bitmap.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_helvr10.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_symbol.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_winfreesystem14x16.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x5x7.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x6x13.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_phy_dp83640.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adt7420.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adxl345.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_glcd.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_c.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\uCOS-III\bsp_os.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\hwinit.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\inthandler.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\start.asm" "001a946bd7d6cc10" 3 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\vects.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_cloud.c" "09f2d354b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_probe.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_tcpip.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\exosite.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\flash_api_rx600.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\rdk_meta.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\net_dev_cfg.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_app_hooks.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-CPU\cpu_core.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_ascii.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_math.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_mem.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_str.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\OS\uCOS-III\probe_com_os.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\OS\uCOS-III\probe_rs232_os.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232c.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Source\probe_rs232.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\Source\probe_com.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\OS\uCOS-III\probe_tcpip_os.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\Source\probe_tcpip.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_c.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_cfg_app.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_core.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_dbg.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_flag.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_int.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mem.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_msg.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mutex.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_pend_multi.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_prio.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_q.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_sem.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_stat.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_task.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tick.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_time.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tmr.c" "001a946bd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_var.c" "001a946bd7d6cc10" 2 
+"Preprocess Assembly file" "001a946bd7d6cc10" 3 
+[OPTIONS_Debug_GNU Library Generator]
+"Single Shot" "0154e80b8a86cc10" 1 
+[OPTIONS_Debug_GNU Linker]
+"Single Shot" "00001b54b657cc10" 5 
+[OPTIONS_Debug]
+"" 0 
+"[V|VERSION|2] [B|DOEXTF|1] [S|EXTFILE|^"$(CONFIGDIR)\uCOS-III-Ex1.gld^"] [S|INCDIR|^"$(TCINSTALL)\rx-elf\lib\gcc\rx-elf\4.5-GNURX_v11.02^"|^"$(CONFIGDIR)^"] [B|RSARCH|1] [B|FIXUPLIBS|1] [S|ARCHIVE|libgcc.a*lib$(PROJECTNAME).a] [S|INPUT|^"$(PROJDIR)\..\uCOS-III-Lib\uC-TCPIP-V2.a^"|^"$(PROJDIR)\..\uCOS-III-Lib\uC-DHCPc-V2.a^"] [S|OUTFORM|BOTH] [B|MFILEGEN|1] [S|PLMFILE|^"$(CONFIGDIR)\$(PROJECTNAME).map^"] [S|OUTFILE|^"$(CONFIGDIR)\$(PROJECTNAME).x^"] [S|GROUPDET|.fvectors|0|0||1|0xFFFFFF80|0|1|0|.fvectors|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.text|0|0||1|0xFFF80000|0|0|0|.text|All-files|<<FEND>>|0|.text.*|All-files|<<FEND>>|0|P|All-files|<<FEND>>|1|etext|<<FEND>>|<<CEND>>|<<GEND>>|.rvectors|0|0||0||0|1|1|_rvectors_start|<<FEND>>|0|.rvectors|All-files|<<FEND>>|1|_rvectors_end|<<FEND>>|<<CEND>>|<<GEND>>|.init|0|0||0||0|0|0|.init|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.fini|0|0||0||0|0|0|.fini|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.got|0|0||0||0|0|0|.got|All-files|<<FEND>>|0|.got.plt|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.rodata|0|0||0||0|0|0|.rodata|All-files|<<FEND>>|0|.rodata.*|All-files|<<FEND>>|0|C_1|All-files|<<FEND>>|0|C_2|All-files|<<FEND>>|0|C|All-files|<<FEND>>|1|_erodata|<<FEND>>|<<CEND>>|<<GEND>>|.eh_frame_hdr|0|0||0||0|0|0|.eh_frame_hdr|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.eh_frame|0|0||0||0|0|0|.eh_frame|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.jcr|0|0||0||0|0|0|.jcr|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.tors|0|0||0||0|0|1|__CTOR_LIST__|<<FEND>>|1|___ctors|<<FEND>>|0|.ctors|All-files|<<FEND>>|1|___ctors_end|<<FEND>>|1|__CTOR_END__|<<FEND>>|1|__DTOR_LIST__|<<FEND>>|1|___dtors|<<FEND>>|0|.dtors|All-files|<<FEND>>|1|___dtors_end|<<FEND>>|1|__DTOR_END__|<<FEND>>|1|_mdata|<<FEND>>|<<CEND>>|<<GEND>>|.istack|0|0||1|0x00017FF8|0|0|1|_istack|<<FEND>>|<<CEND>>|<<GEND>>|.ustack|0|0||1|0x00017FFC|0|0|1|_ustack|<<FEND>>|<<CEND>>|<<GEND>>|.data|0|2|_mdata|1|0x00000000|0|0|1|_data|<<FEND>>|0|.data|All-files|<<FEND>>|0|.data.*|All-files|<<FEND>>|0|D|All-files|<<FEND>>|0|D_1|All-files|<<FEND>>|0|D_2|All-files|<<FEND>>|1|_edata|<<FEND>>|<<CEND>>|<<GEND>>|.gcc_exc|0|0||0||0|0|0|.gcc_exc|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.bss|0|0||0||0|0|1|_bss|<<FEND>>|0|.bss|All-files|<<FEND>>|0|.bss.*|All-files|<<FEND>>|0|COMMON|All-files|<<FEND>>|0|B|All-files|<<FEND>>|0|B_1|All-files|<<FEND>>|0|B_2|All-files|<<FEND>>|1|_ebss|<<FEND>>|1|_end|<<FEND>>|<<CEND>>|<<GEND>>|] [B|GCSECTS|1] [S|APPTXT|^"-e _start^"] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CAPPPROJECT] [B|DOOPTLIB|1] [B|DOPROJBUILT|1]
+" 5 
+"[V|VERSION|2] [S|INCDIR|^"$(PROJDIR)^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Ports\Renesas\RX600\GNURX^"] [I|DEBUGLV|2] [S|OBJPATH|^"$(CONFIGDIR)\$(FILELEAF).o^"] [B|LINCASS|1] [B|LINCSYM|1] [B|LINCHLS|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CAPPPROJECT]
+" 4 
+"[V|VERSION|2] [S|INCDIR|^"$(TCINSTALL)\rx-elf\rx-elf\optlibinc^"|^"$(PROJDIR)^"|^"$(PROJDIR)\Init^"|^"$(PROJDIR)\..\uCOS-III-Lib^"|^"$(PROJDIR)\..\..\BSP^"|^"$(PROJDIR)\..\..\BSP\Glyph^"|^"$(PROJDIR)\..\..\BSP\TCPIP-V2^"|^"$(PROJDIR)\..\..\BSP\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU\RX62N\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-LIB^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Source^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Ports\Renesas\RX600\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-DHCPc-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\TCPIP\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\IF^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\OS\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\FS\Static^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\Source^"] [S|DEFINES|DEBUG] [B|WIMPLICIT|1] [B|WRTYPE|1] [S|OUTPUT|OBJECT] [S|OBJPATH|^"$(CONFIGDIR)\$(FILELEAF).o^"] [B|DEBUG|1] [S|DEBUGFT|Native] [I|DEBUGLV|2] [S|ALIGN4|ALL] [B|OPTIMIZE|1] [B|LTO|0] [I|OPTLV|2] [B|NOSTDINC|1] [S|APPTXT|^"-Wa,-gdwarf2^"] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CPPAPPPROJECT] [B|DOOPTLIB|1]
+" 3 
+"[V|VERSION|2] [S|INCDIR|^"$(TCINSTALL)\rx-elf\rx-elf\optlibinc^"|^"$(PROJDIR)^"|^"$(PROJDIR)\Init^"|^"$(PROJDIR)\..\uCOS-III-Lib^"|^"$(PROJDIR)\..\..\BSP^"|^"$(PROJDIR)\..\..\BSP\Glyph^"|^"$(PROJDIR)\..\..\BSP\TCPIP-V2^"|^"$(PROJDIR)\..\..\BSP\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU\RX62N\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-LIB^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Source^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Ports\Renesas\RX600\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-DHCPc-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\TCPIP\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\IF^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\OS\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\FS\Static^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\Source^"] [S|DEFINES|DEBUG] [B|WIMPLICIT|1] [B|WRTYPE|1] [S|OUTPUT|OBJECT] [S|OBJPATH|^"$(CONFIGDIR)\$(FILELEAF).o^"] [B|DEBUG|1] [S|DEBUGFT|Native] [I|DEBUGLV|2] [S|ALIGN4|ALL] [B|OPTIMIZE|1] [B|LTO|0] [I|OPTLV|2] [B|NOSTDINC|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CPPAPPPROJECT] [B|DOOPTLIB|1]
+" 2 
+"[V|VERSION|2] [S|MODE|BUILD/CHANGED] [B|MATH|1] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|DOPROJBUILT|1] [B|DOOPTLIB|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\lib$(PROJECTNAME).a^"] [B|OPTIMIZE|1] [I|OPTTYPE|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0]
+" 1 
+[EXCLUDED_FILES_Debug]
+[LINKAGE_ORDER_Debug]
+[GENERAL_DATA_CONFIGURATION_Debug]
+[OPTIONS_Release_GNU Assembler]
+"Assembly source file" "014db80b8a86cc10" 3 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp_a.s" "014db80b8a86cc10" 3 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_a.s" "014db80b8a86cc10" 3 
+"C:\Micrium\Software\uC-CPU\RX62N\GNURX\cpu_a.s" "014db80b8a86cc10" 3 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232a.s" "014db80b8a86cc10" 3 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_a.s" "014db80b8a86cc10" 3 
+[OPTIONS_Release_GNU Compiler]
+"C source file" "069e971fd7d6cc10" 2 
+"C++ source file" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\CPU\cpu_bsp.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\Glyph.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\GlyphRegister.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\ST7579_LCD.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\YRDKRX62N_RSPI0.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x16.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_8x8.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_bitmap.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_helvr10.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_symbol.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_winfreesystem14x16.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x5x7.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\Glyph\font_x6x13.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_bsp.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\TCPIP-V2\net_phy_dp83640.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adt7420.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_adxl345.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_glcd.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\bsp_tick_c.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\BSP\uCOS-III\bsp_os.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\hwinit.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\inthandler.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\start.asm" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\Init\vects.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_cloud.c" "09f2d354b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_probe.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\app_tcpip.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\exosite.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\flash_api_rx600.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Ex1\uC-Exosite\rdk_meta.c" "02ae8903b657cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\net_dev_cfg.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\uCOS-III-Lib\os_app_hooks.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-CPU\cpu_core.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_ascii.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_math.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_mem.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-LIB\lib_str.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\OS\uCOS-III\probe_com_os.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\OS\uCOS-III\probe_rs232_os.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N\probe_rs232c.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\RS-232\Source\probe_rs232.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\Source\probe_com.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\OS\uCOS-III\probe_tcpip_os.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uC-Probe\Target\Communication\Generic\TCPIP\Source\probe_tcpip.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Ports\Renesas\RX600\GNURX\os_cpu_c.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_cfg_app.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_core.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_dbg.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_flag.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_int.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mem.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_msg.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_mutex.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_pend_multi.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_prio.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_q.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_sem.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_stat.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_task.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tick.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_time.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_tmr.c" "069e971fd7d6cc10" 2 
+"C:\Micrium\Software\uCOS-III\Source\os_var.c" "069e971fd7d6cc10" 2 
+"Preprocess Assembly file" "069e971fd7d6cc10" 2 
+[OPTIONS_Release_GNU Library Generator]
+"Single Shot" "02a8980b8a86cc10" 1 
+[OPTIONS_Release_GNU Linker]
+"Single Shot" "00001b54b657cc10" 4 
+[OPTIONS_Release]
+"" 0 
+"[V|VERSION|2] [B|DOEXTF|1] [S|INCDIR|^"$(TCINSTALL)\rx-elf\lib\gcc\rx-elf\4.5-GNURX_v11.02^"|^"$(CONFIGDIR)^"] [B|RSARCH|1] [B|FIXUPLIBS|1] [S|ARCHIVE|libgcc.a*lib$(PROJECTNAME).a] [S|INPUT|^"$(PROJDIR)\..\uCOS-III-Lib\uC-TCPIP-V2.a^"|^"$(PROJDIR)\..\uCOS-III-Lib\uC-DHCPc-V2.a^"] [S|OUTFORM|BOTH] [B|MFILEGEN|1] [S|PLMFILE|^"$(CONFIGDIR)\$(PROJECTNAME).map^"] [S|OUTFILE|^"$(CONFIGDIR)\$(PROJECTNAME).x^"] [S|GROUPDET|.fvectors|0|0||1|0xFFFFFF80|0|1|0|.fvectors|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.text|0|0||1|0xFFF80000|0|0|0|.text|All-files|<<FEND>>|0|.text.*|All-files|<<FEND>>|0|P|All-files|<<FEND>>|1|etext|<<FEND>>|<<CEND>>|<<GEND>>|.rvectors|0|0||0||0|1|1|_rvectors_start|<<FEND>>|0|.rvectors|All-files|<<FEND>>|1|_rvectors_end|<<FEND>>|<<CEND>>|<<GEND>>|.init|0|0||0||0|0|0|.init|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.fini|0|0||0||0|0|0|.fini|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.got|0|0||0||0|0|0|.got|All-files|<<FEND>>|0|.got.plt|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.rodata|0|0||0||0|0|0|.rodata|All-files|<<FEND>>|0|.rodata.*|All-files|<<FEND>>|0|C_1|All-files|<<FEND>>|0|C_2|All-files|<<FEND>>|0|C|All-files|<<FEND>>|1|_erodata|<<FEND>>|<<CEND>>|<<GEND>>|.eh_frame_hdr|0|0||0||0|0|0|.eh_frame_hdr|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.eh_frame|0|0||0||0|0|0|.eh_frame|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.jcr|0|0||0||0|0|0|.jcr|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.tors|0|0||0||0|0|1|__CTOR_LIST__|<<FEND>>|1|___ctors|<<FEND>>|0|.ctors|All-files|<<FEND>>|1|___ctors_end|<<FEND>>|1|__CTOR_END__|<<FEND>>|1|__DTOR_LIST__|<<FEND>>|1|___dtors|<<FEND>>|0|.dtors|All-files|<<FEND>>|1|___dtors_end|<<FEND>>|1|__DTOR_END__|<<FEND>>|1|_mdata|<<FEND>>|<<CEND>>|<<GEND>>|.istack|0|0||1|0x00017FF8|0|0|1|_istack|<<FEND>>|<<CEND>>|<<GEND>>|.ustack|0|0||1|0x00017FFC|0|0|1|_ustack|<<FEND>>|<<CEND>>|<<GEND>>|.data|0|2|_mdata|1|0x00000400|0|0|1|_data|<<FEND>>|0|.data|All-files|<<FEND>>|0|.data.*|All-files|<<FEND>>|0|D|All-files|<<FEND>>|0|D_1|All-files|<<FEND>>|0|D_2|All-files|<<FEND>>|1|_edata|<<FEND>>|<<CEND>>|<<GEND>>|.gcc_exc|0|0||0||0|0|0|.gcc_exc|All-files|<<FEND>>|<<CEND>>|<<GEND>>|.bss|0|0||0||0|0|1|_bss|<<FEND>>|0|.bss|All-files|<<FEND>>|0|.bss.*|All-files|<<FEND>>|0|COMMON|All-files|<<FEND>>|0|B|All-files|<<FEND>>|0|B_1|All-files|<<FEND>>|0|B_2|All-files|<<FEND>>|1|_ebss|<<FEND>>|1|_end|<<FEND>>|<<CEND>>|<<GEND>>|] [B|OPTMEM|1] [B|ODEBSYM|1] [B|GCSECTS|1] [S|APPTXT|^"-e _start^"] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CAPPPROJECT] [B|DOOPTLIB|1] [B|DOPROJBUILT|1]
+" 4 
+"[V|VERSION|2] [S|INCDIR|^"$(PROJDIR)^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Ports\Renesas\RX600\GNURX^"] [I|DEBUGLV|0] [S|OBJPATH|^"$(CONFIGDIR)\$(FILELEAF).o^"] [B|LINCASS|1] [B|LINCSYM|1] [B|LINCHLS|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CAPPPROJECT]
+" 3 
+"[V|VERSION|2] [S|INCDIR|^"$(TCINSTALL)\rx-elf\rx-elf\optlibinc^"|^"$(PROJDIR)^"|^"$(PROJDIR)\Init^"|^"$(PROJDIR)\..\uCOS-III-Lib^"|^"$(PROJDIR)\..\..\BSP^"|^"$(PROJDIR)\..\..\BSP\Glyph^"|^"$(PROJDIR)\..\..\BSP\TCPIP-V2^"|^"$(PROJDIR)\..\..\BSP\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU^"|^"$(PROJDIR)\..\..\..\..\..\uC-CPU\RX62N\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-LIB^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Source^"|^"$(PROJDIR)\..\..\..\..\..\uCOS-III\Ports\Renesas\RX600\GNURX^"|^"$(PROJDIR)\..\..\..\..\..\uC-DHCPc-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\RS-232\Ports\Renesas\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-Probe\Target\Communication\Generic\TCPIP\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Dev\Ether\RX-EtherC\RX62N^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\IF^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\OS\uCOS-III^"|^"$(PROJDIR)\..\..\..\..\..\uC-TCPIP-V2\Source^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\FS\Static^"|^"$(PROJDIR)\..\..\..\..\..\uC-HTTPs\Source^"] [S|DEFINES|RELEASE] [S|OUTPUT|OBJECT] [S|OBJPATH|^"$(CONFIGDIR)\$(FILELEAF).o^"] [B|DEBUG|0] [S|DEBUGFT|Native] [I|DEBUGLV|2] [S|ALIGN4|ALL] [B|OPTIMIZE|1] [B|LTO|0] [I|OPTLV|2] [B|NOSTDINC|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0] [S|PROJECTTYPE|CAPPPROJECT] [B|DOOPTLIB|1]
+" 2 
+"[V|VERSION|2] [S|MODE|BUILD/CHANGED] [B|STDIO|1] [B|STDLIB|1] [B|STRING|1] [B|DOPROJBUILT|1] [B|DOOPTLIB|1] [S|OUTPUTPATH|^"$(CONFIGDIR)\lib$(PROJECTNAME).a^"] [B|OPTIMIZE|1] [I|OPTTYPE|1] [S|CPUTYPE|RX600] [S|ENDIAN|LITTLE] [S|CPU|Other] [I|RMINTREGVAL|0] [I|RMMAXCONSTVAL|0] [I|RMMAXVARSVAL|0]
+" 1 
+[EXCLUDED_FILES_Release]
+[LINKAGE_ORDER_Release]
+[GENERAL_DATA_CONFIGURATION_Release]
+[GENERAL_DATA_CONFIGURATION_SESSION_Debug_DefaultSession]
+[SESSION_DATA_CONFIGURATION_SESSION_Debug_DefaultSession]
+"MEMORY_MAPPING_OPTIONS" "" 
+[GENERAL_DATA_CONFIGURATION_SESSION_Debug_JLink]
+[SESSION_DATA_CONFIGURATION_SESSION_Debug_JLink]
+"MEMORY_MAPPING_OPTIONS" "" 
+[GENERAL_DATA_CONFIGURATION_SESSION_Release_DefaultSession]
+[SESSION_DATA_CONFIGURATION_SESSION_Release_DefaultSession]
+"MEMORY_MAPPING_OPTIONS" "" 
+[GENERAL_DATA_CONFIGURATION_SESSION_Release_JLink]
+[SESSION_DATA_CONFIGURATION_SESSION_Release_JLink]
+"MEMORY_MAPPING_OPTIONS" "" 
+[EXT_DEBUGGER_INFO]
+0 "" "" "" "" 
+[END]
