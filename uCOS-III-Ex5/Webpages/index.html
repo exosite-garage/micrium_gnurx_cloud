@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>&micro;C/HTTPs</title>
+	<meta name="generator" content="BBEdit 9.3">
+	<style type="text/css" title="text/css">
+
+		html { height:100%; }
+		body { background:#666666; color:#0a0a0a; font-family:Arial, sans-serif; font-size:14px; line-height:21px; height:100%; }
+		* { font-size:1em; margin:0; padding:0; }
+		ul, ol { padding-left:1.6em; }
+		option { min-width: 1.5em; }
+		
+		input { font-size:10px; }
+		input.bluebutton {background:#dde2e6; border:2px solid #000000; color:#223d50; font-weight:bold; padding:3px 5px 3px 5px; }
+
+		table, td { border:none; margin:0; padding:0; }
+
+		#controls { float:right; margin:0 30px 0 0; width:370px; }
+
+		#copyright { clear:both; font-size:10px; padding:30px 0 0 0; text-align:right; }
+
+		#information { float:left; margin:0 30px 0 0; width:370px; }
+		#information a:link { color:#cccccc; }
+		#information a:visited { color:#cccccc; }
+		#information a:hover { color:#fa9500; }
+		#information a:active { color:#fa9500; }
+
+		#pagebody { background:#223d50; padding:0 0 30px 0; }
+		#pagebody h2 { color:#ffffff; font-size:18px; font-weight:bold; margin:30px 0 14px 30px; }
+		#pagebody p { color:#ffffff; margin:0 30px 14px 30px; }
+		#pagebody p.alertbox { background:#fa9500; margin:30px 20px 14px 20px; padding:5px 10px 5px 10px; }
+
+		#pagewrapper { background:#666666; margin:0 auto 0 auto; width:800px; }
+
+		#topbanner { background:#dde2e6; padding:20px; }
+		#topbanner p { color:#223d50; }
+
+	</style>
+</head>
+<body>
+
+<div id="pagewrapper">
+
+	<div id="topbanner">
+		<img src="logo.gif" alt="" width="212" height="41">
+		<p><strong>A Member of the &micro;C/TCP-IP Product Family</strong></p>
+	</div>
+	
+	<div id="pagebody">
+	
+		<div id="information">
+			<p class="alertbox">Your HTTP server is working properly.</p>
+			<p><a href="http://www.micrium.com/products/rtos/kernel/rtos.html">&micro;C/OS-III</a> Version: ${OS_VERSION}</p>
+			<p><a href="http://www.micrium.com/products/tcp-ip/tcp-ip.html">&micro;C/TCP-IP</a> Version: ${NET_VERSION}</p>
+		</div>
+
+		<div id="controls">
+			<h2>Eval Board Status</h2>
+			<p>Temperature sensor: ${TEMP_C}&deg;C</p>
+			<p>Temperature sensor: ${TEMP_F}&deg;F</p>
+			<h2>Eval Board Controls</h2>
+			<table>
+				<tr>
+					<td>
+						<form action="index.html" method="POST"> 
+							<p>
+								<input name="LED" type="hidden" value="LED1">
+								<input type="submit" value="Toggle LED 15" class="bluebutton">
+							</p>
+						</form>
+					</td>
+					<td>
+						<form action="index.html" method="POST"> 
+							<p>
+								<input name="LED" type="hidden" value="LED2"> 
+								<input type="submit" value="Toggle LED 4" class="bluebutton">
+							</p>
+						</form> 
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="copyright">
+			<p>Copyright 2010 Micri&micro;m Inc.</p>
+		</div>
+
+	</div>
+
+</div>
+
+</body>
+</html>
