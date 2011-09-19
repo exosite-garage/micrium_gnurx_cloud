@@ -162,7 +162,6 @@ void Exosite_SetCIK(CPU_CHAR * pCIK)
 */
 CPU_SIZE_T Exosite_Read(CPU_CHAR *pkey, CPU_CHAR *pbuf, CPU_SIZE_T buflen)
 {
-    CPU_BOOLEAN  success = DEF_FALSE;
     NET_SOCK_ID  sock;
     CPU_SIZE_T   len, klen, vlen, rxlen;
     CPU_CHAR    *p,  *pcheck;
@@ -201,7 +200,6 @@ CPU_SIZE_T Exosite_Read(CPU_CHAR *pkey, CPU_CHAR *pbuf, CPU_SIZE_T buflen)
     if (12 == rxlen && '2' == rx[9] && '0' == rx[10] && '0' == rx[11])
     {
         CPU_CHAR crlf = 0;
-        CPU_CHAR ciklen = 0;
 
         do
         {
@@ -341,7 +339,7 @@ CPU_BOOLEAN Exosite_Write_Batch(CPU_CHAR **pkeys, CPU_CHAR **pvalues, CPU_SIZE_T
 {
     CPU_BOOLEAN  success = DEF_FALSE;
     NET_SOCK_ID  sock;
-    CPU_SIZE_T   len, slen, klen, vlen, rxlen;
+    CPU_SIZE_T   len, slen, rxlen;
     CPU_CHAR     length[4];
     CPU_CHAR     rx[RX_SIZE];
     CPU_SIZE_T   i;
@@ -547,7 +545,6 @@ static void activate_device(void)
 */
 void update_m2ip(void)
 {
-    CPU_BOOLEAN  success = DEF_FALSE;
     NET_SOCK_ID  sock;
     CPU_SIZE_T   len, rxlen, IPLEN = 23; // 23 => 3*6+5 => "nnn,nnn,nnn,nnn,nnn,nnn"
     CPU_CHAR    *p;
@@ -619,7 +616,7 @@ void update_m2ip(void)
 
             p = ip;
 
-            for (i = 0; i < 6, iplen > 0; i++)
+            for (i = 0; i < 6 || iplen > 0; i++)
             {
                 if (*p >= '0' && *p <= '9')
                 {

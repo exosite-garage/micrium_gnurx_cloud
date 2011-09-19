@@ -43,6 +43,19 @@
 static  OS_TCB   CloudData_TaskTCB;
 static  CPU_STK  CloudData_TaskStk[CLOUD_DATA_TASK_STK_SIZE];  /* Stack for cloud data task.                 */
 
+enum STATUS_MESSAGES
+{
+  MSG_ERROR,  
+  MSG_CONNECTED, 
+  MSG_UNAVAILABLE,
+  MSG_BLANK,
+  MSG_END
+};
+
+const CPU_CHAR msg_status[MSG_END][19]  = { "Cloud: Error\0",
+                                            "Cloud: Connected\0",
+                                            "Cloud: Unavailable\0",
+                                            "                  \0"};
 
 /*
 *********************************************************************************************************
@@ -59,6 +72,7 @@ extern volatile  CPU_INT08U  AppCloudControlLedOn;
 *********************************************************************************************************
 */
 static  void  CloudData_Task    (void *p_arg);                   /* Cloud data task.                           */
+static  void  UI_Update         (CPU_CHAR message);              /* Local function for LCD updates             */
 
 CPU_BOOLEAN Exosite_Init        (CPU_CHAR  *pOS,   CPU_CHAR  *pVer,    NET_IF_NBR if_nbr);
 CPU_BOOLEAN Exosite_Reinit      (void);
@@ -118,19 +132,24 @@ void AppCloud_Init (void)
 static void CloudData_Task (void *p_arg)
 {
     OS_ERR       err;
-    CPU_CHAR    *keys[2];
-    CPU_CHAR    *values[2];
+    CPU_CHAR    *keys[3];
+    CPU_CHAR    *values[3];
     CPU_CHAR     strdfreq[4];
     CPU_CHAR     strafreq[4];
+    CPU_CHAR     strping[4];
+    CPU_CHAR     ping = 0;
     CPU_CHAR     ledctrl;
+    CPU_CHAR     read_count = 0;
     CPU_BOOLEAN  cloud_available;
 
     (void)p_arg;
 
-    keys[0] = "freq_d";
-    keys[1] = "freq_a";
-    values[0] = strdfreq;
-    values[1] = strafreq;
+    keys[0] = "ping";
+    values[0] = strping;
+    keys[1] = "freq_d";
+    values[1] = strdfreq;
+    keys[2] = "freq_a";
+    values[2] = strafreq;
 
     // OS Name = "Micrium-Ex4" <- MAX Length = 24
     // OS Ver  = "3.01.2" <- MAX Length = 8
@@ -141,17 +160,12 @@ static void CloudData_Task (void *p_arg)
     {
         if (DEF_TRUE != cloud_available)
         {
-            if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
-                !PORT4.PORT.BIT.B1 ||
-                !PORT4.PORT.BIT.B2) 
-            {
-                BSP_GraphLCD_String(3, "Cloud: Unavailable");
-            } else BSP_GraphLCD_String(3, "");
+            UI_Update(MSG_UNAVAILABLE);
 
-            // Sleep 30 seconds
+            // Sleep 20 seconds
             OSTimeDlyHMSM((CPU_INT16U)  0u,
                           (CPU_INT16U)  0u,
-                          (CPU_INT16U) 30u,
+                          (CPU_INT16U) 20u,
                           (CPU_INT32U)  0u,
                           (OS_OPT    ) OS_OPT_TIME_HMSM_NON_STRICT,
                           (OS_ERR   *)&err);
@@ -161,53 +175,57 @@ static void CloudData_Task (void *p_arg)
         }
         else
         {
-            // Write current Actual and Desired frequencies to the cloud
-            Str_FmtNbr_Int32U(AppFreqSetpointHz,
-                              3u,
-                              DEF_NBR_BASE_DEC,
-                              ASCII_CHAR_NULL,
-                              DEF_NO,
-                              DEF_YES,
-                             &strdfreq[0]);
+            if (read_count++ > 10) {
+                read_count = 0;
+                // Create string from ping value
+                Str_FmtNbr_Int32U(ping++,
+                                  3u,
+                                  DEF_NBR_BASE_DEC,
+                                  ASCII_CHAR_NULL,
+                                  DEF_NO,
+                                  DEF_YES,
+                                 &strping[0]);
 
-            Str_FmtNbr_Int32U(AppFreqActualHz,
-                              3u,
-                              DEF_NBR_BASE_DEC,
-                              ASCII_CHAR_NULL,
-                              DEF_NO,
-                              DEF_YES,
-                             &strafreq[0]);
+                // Create strings for Actual and Desired frequencies
+                Str_FmtNbr_Int32U(AppFreqSetpointHz,
+                                  3u,
+                                  DEF_NBR_BASE_DEC,
+                                  ASCII_CHAR_NULL,
+                                  DEF_NO,
+                                  DEF_YES,
+                                 &strdfreq[0]);
 
-            if (DEF_TRUE != Exosite_Write_Batch(keys, values, 2))
-            {
-                if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
-                    !PORT4.PORT.BIT.B1 ||
-                    !PORT4.PORT.BIT.B2) 
-                {
-                    BSP_GraphLCD_String(3, "Cloud: Error");
-                } else BSP_GraphLCD_String(3, "");
-            }
-            else
-            {
-                if (!PORT4.PORT.BIT.B0 ||   //check if a switch is pressed
-                    !PORT4.PORT.BIT.B1 ||
-                    !PORT4.PORT.BIT.B2)
-                {
-                    BSP_GraphLCD_String(3, "Cloud: Connected");
-                } else BSP_GraphLCD_String(3, "");
+                Str_FmtNbr_Int32U(AppFreqActualHz,
+                                  3u,
+                                  DEF_NBR_BASE_DEC,
+                                  ASCII_CHAR_NULL,
+                                  DEF_NO,
+                                  DEF_YES,
+                                 &strafreq[0]);
 
-                if (1 == Exosite_Read("led_ctrl", &ledctrl, 1))
+                if (DEF_TRUE != Exosite_Write_Batch(keys, values, 3))
                 {
-                    if ('0' == ledctrl)
-                    {
-                        AppCloudControlLedOn = 0;
-                    }
-                    if ('1' == ledctrl)
-                    {
-                        AppCloudControlLedOn = 1;
-                    }
+                    UI_Update(MSG_ERROR);
+                }
+                else
+                {
+                    UI_Update(MSG_CONNECTED);
                 }
             }
+            
+            if (1 == Exosite_Read("led_ctrl", &ledctrl, 1))
+            {
+                UI_Update(MSG_CONNECTED);
+                
+                if ('0' == ledctrl)
+                {
+                    AppCloudControlLedOn = 0;
+                }
+                if ('1' == ledctrl)
+                {
+                    AppCloudControlLedOn = 1;
+                }
+            } else UI_Update(MSG_ERROR);
 
             // Sleep 2 seconds
             OSTimeDlyHMSM((CPU_INT16U) 0u,
@@ -218,4 +236,36 @@ static void CloudData_Task (void *p_arg)
                           (OS_ERR   *)&err);
         }
     }
+}
+
+/*
+*********************************************************************************************************
+*                                           UI_Update()
+*
+* Description : Updates LCD with Cloud status messages
+*
+* Argument(s) : message          Index into const message array.
+*
+* Return(s)   : none.
+*
+* Caller(s)   : CloudData_Task
+*
+* Note(s)     : none.
+*********************************************************************************************************
+*/       
+static void UI_Update (CPU_CHAR message)
+{
+static CPU_CHAR display_status = 0;
+
+    if (!PORT4.PORT.BIT.B0 ||   //check if any switches are pressed
+        !PORT4.PORT.BIT.B1 ||
+        !PORT4.PORT.BIT.B2) {
+        display_status ^= 1;
+        if (!display_status) BSP_GraphLCD_String(3, msg_status[MSG_BLANK]); //only clear once on button press in case others want to use line 3
+    }
+
+    if (display_status) {
+        BSP_GraphLCD_String(3, msg_status[MSG_BLANK]);  
+        BSP_GraphLCD_String(3, msg_status[message]);
+    }  
 }

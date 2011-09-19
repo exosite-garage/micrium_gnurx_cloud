@@ -81,13 +81,15 @@ static  void  AppGraphLCD_Hdr  (void);
 
 #if (APP_CFG_TCPIP_MODULE_EN > 0u)
         void  AppTCPIP_Init    (NET_ERR  *perr);
+        void  AppCloud_Init    (void);
 #endif
 
 #if (APP_CFG_PROBE_COM_MODULE_EN > 0u)
         void  AppProbe_Init    (void);
 #endif
 
-        void  AppCloud_Init    (void);
+#define EX_LED_ON(a) {if (AppCloudControlLedOn) LED_On(a); else LED_Off(a);}
+
 
 /*
 *********************************************************************************************************
@@ -193,7 +195,7 @@ static  void  AppTaskStart (void *p_arg)
     Mem_Init();                                                 /* Initialize mem mgmt module, required for TCP-IP.     */
 
 #if (APP_CFG_PROBE_COM_MODULE_EN > 0u)
-//    AppProbe_Init();                                            /* Initialize uC/Probe modules                          */
+    AppProbe_Init();                                            /* Initialize uC/Probe modules                          */
 #endif
 
     OSTaskCreate((OS_TCB     *)&AppFFTTaskTCB,                  /* Create the start task                                */
@@ -665,17 +667,14 @@ void  AppADC_ISR_ConversionHandler (void)
     }
 
     if (led_dly == 0) {                                         /* Turn on appropriate LED                              */
-        LED_Off(led_idx);
-        LED_Off(led_idx + 6);
+        EX_LED_ON(led_idx);
+        EX_LED_ON(led_idx + 6);
         led_idx++;
         if (led_idx == 10){
             led_idx  = 4;
         }
-        if (AppCloudControlLedOn > 0)
-        {
-            LED_On(led_idx);
-            LED_On(led_idx + 6);
-        }
+        LED_Off(led_idx);
+        LED_Off(led_idx + 6);
         led_dly = 5000 / AppFreqActualHz;
     }
     led_dly--;
