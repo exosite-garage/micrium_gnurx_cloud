@@ -65,18 +65,21 @@ Quick Start
 2) Install the KPIT GNURX Toolchain v.11.02 (if not already)<br>
 * HINT: download from http://www.kpitgnutools.com/index.php
 
-2) Open workspace "GNURX.hws" and select your desired project as the "Current 
+3) Copy all files (if not already) into the path:<br>
+* C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX\<br>
+
+4) Open workspace "GNURX.hws" and select your desired project as the "Current 
 Project"<br>
 * Default directory is: C:\Micrium\Software\EvalBoards\Renesas\YRDKRX62N\GNURX<br>
 
-4) Compile and download -> check https://renesas.exosite.com to see your data
+5) Compile and download -> check https://renesas.exosite.com to see your data
 in the cloud!<br>
 * HINT: Your RDK must be connected to the Internet via the RJ-45 ethernet jack<br>
 * HINT: If your network does not support DHCP, you will need to set static 
         values<br>
 
 For more information on this project and other examples, reference the online 
-documentation at http://tinyurl.com/28cphut<br>
+documentation at http://exosite.com/renesas<br>
 
 ========================================
 Release Info
