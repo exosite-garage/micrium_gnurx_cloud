@@ -85,6 +85,13 @@ documentation at http://exosite.com/renesas<br>
 Release Info
 ========================================
 ----------------------------------------
+Release 2011-10-27
+----------------------------------------
+--) minor update to show MAC address on Ex1~Ex5<br>
+--) minor update to hide cloud status on Ex6<br>
+--) minor update to add key press "SW1+SW2+SW3" for cloud status on Ex6<br>
+
+----------------------------------------
 Release 2011-09-19
 ----------------------------------------
 --) added all 6 Micrium Example projects<br>

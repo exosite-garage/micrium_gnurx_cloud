@@ -64,7 +64,7 @@ static  void  AppGraphLCD_Hdr(void);
         void  AppProbe_Init  (void);
 #endif
 
-void  AppCloud_Init (void);
+void  AppCloud_Init (CPU_BOOLEAN disableStatus);
 
 #define EX_LED_ON(a) {if (AppCloudControlLedOn) LED_On(a); else LED_Off(a);}
 
@@ -205,7 +205,7 @@ static  void  AppTaskStart (void *p_arg)
 
 #if (APP_CFG_TCPIP_MODULE_EN > 0u)
     AppTCPIP_Init(&net_err);                                    /* Initialize uC/TCP-IP & associated applications.      */
-    AppCloud_Init();
+    AppCloud_Init(0);
 #endif
 
 #ifdef CPU_CFG_INT_DIS_MEAS_EN
@@ -495,4 +495,3 @@ static  void  AppGraphLCD_Hdr (void)
     BSP_GraphLCD_StringPos(2, 5, "uC/TCP-IP");
 #endif
 }
-

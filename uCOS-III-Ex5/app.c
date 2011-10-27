@@ -52,7 +52,7 @@ static  void  AppGraphLCD_Hdr(void);
         void  AppProbe_Init  (void);
 #endif
 
-void  AppCloud_Init (void);
+void  AppCloud_Init (CPU_BOOLEAN disableStatus);
 
 #define EX_LED_ON(a) {if (AppCloudControlLedOn) LED_On(a); else LED_Off(a);}
 
@@ -166,7 +166,7 @@ static  void  AppTaskStart (void *p_arg)
     CPU_IntDisMeasMaxCurReset();
 #endif
 
-    AppCloud_Init();
+    AppCloud_Init(0);
 
     LED_Off(0);                                                 /* Turn all LEDs off                                    */
 

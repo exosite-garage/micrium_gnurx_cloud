@@ -59,7 +59,7 @@ static  void  LEDDisplay_Seq1(void);
 static  void  LEDDisplay_Seq2(void);
 static  void  LEDDisplay_Seq3(void);
 
-void  AppCloud_Init (void);
+void  AppCloud_Init (CPU_BOOLEAN disableStatus);
 
 #define EX_LED_ON(a) {if (AppCloudControlLedOn) LED_On(a); else LED_Off(a);}
 
@@ -166,7 +166,7 @@ static  void  AppTaskStart (void *p_arg)
 #if (APP_CFG_TFTPs_MODULE_EN > 0u)
     TFTPs_Init();
 #endif
-    AppCloud_Init();
+    AppCloud_Init(1);
 #else
     AppTCPIP_Cfg = DEF_TRUE;
 #endif
@@ -413,3 +413,4 @@ static  void  AppGraphLCD_Hdr (void)
 #endif
 #endif
 }
+

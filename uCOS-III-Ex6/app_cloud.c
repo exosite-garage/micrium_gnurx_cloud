@@ -42,15 +42,18 @@
 
 static  OS_TCB   CloudData_TaskTCB;
 static  CPU_STK  CloudData_TaskStk[CLOUD_DATA_TASK_STK_SIZE];  /* Stack for cloud data task.                 */
+static  CPU_BOOLEAN DisableCloudStatus = 0;
 
 enum STATUS_MESSAGES
 {
-  MSG_ERROR,  
-  MSG_CONNECTED, 
+  MSG_ERROR,
+  MSG_CONNECTED,
   MSG_UNAVAILABLE,
   MSG_BLANK,
   MSG_END
 };
+
+CPU_CHAR     showMAC[18];
 
 const CPU_CHAR msg_status[MSG_END][19]  = { "Cloud: Error\0",
                                             "Cloud: Connected\0",
@@ -78,6 +81,7 @@ CPU_BOOLEAN Exosite_Reinit      (void);
 CPU_SIZE_T  Exosite_Read        (CPU_CHAR  *pkey,  CPU_CHAR  *pbuf,    CPU_SIZE_T buflen);
 CPU_BOOLEAN Exosite_Write       (CPU_CHAR  *pkey,  CPU_CHAR  *pval);
 CPU_BOOLEAN Exosite_Write_Batch (CPU_CHAR **pkeys, CPU_CHAR **pvalues, CPU_SIZE_T count);
+CPU_BOOLEAN Exosite_GetMAC      (CPU_CHAR * pMAC);
 
 /*
 *********************************************************************************************************
@@ -94,9 +98,12 @@ CPU_BOOLEAN Exosite_Write_Batch (CPU_CHAR **pkeys, CPU_CHAR **pvalues, CPU_SIZE_
 * Note(s)     : none.
 *********************************************************************************************************
 */
-void AppCloud_Init (void)
+void AppCloud_Init (CPU_BOOLEAN disableStatus)
 {
     OS_ERR err;
+
+    if (disableStatus)
+        DisableCloudStatus = 1;
 
     OSTaskCreate((OS_TCB     *)&CloudData_TaskTCB,               /* Create cloud data reporting task.                      */
                  (CPU_CHAR   *)"Cloud Data Task",
@@ -149,6 +156,9 @@ static void CloudData_Task (void *p_arg)
     // Use network interface '1' MAC address
     cloud_available = Exosite_Init("Micrium-Ex6", "3.01.2", (NET_IF_NBR)1);
 
+    Str_Copy(showMAC, "MAC: ");
+    Exosite_GetMAC(&showMAC[5]);
+
     while (DEF_TRUE)
     {
         if (DEF_TRUE != cloud_available)
@@ -179,7 +189,7 @@ static void CloudData_Task (void *p_arg)
                                   DEF_YES,
                                  &strping[0]);
 
-                if (DEF_TRUE != Exosite_Write_Batch(keys, values, 1))
+                if (DEF_TRUE != Exosite_Write_Batch(keys, values, 3))
                 {
                     UI_Update(MSG_ERROR);
                 }
@@ -188,7 +198,7 @@ static void CloudData_Task (void *p_arg)
                     UI_Update(MSG_CONNECTED);
                 }
             }
-
+            
             if (1 == Exosite_Read("led_ctrl", &ledctrl, 1))
             {
                 UI_Update(MSG_CONNECTED);
@@ -232,16 +242,27 @@ static void CloudData_Task (void *p_arg)
 static void UI_Update (CPU_CHAR message)
 {
 static CPU_CHAR display_status = 0;
-
-    if (!PORT4.PORT.BIT.B0 ||   //check if any switches are pressed
-        !PORT4.PORT.BIT.B1 ||
-        !PORT4.PORT.BIT.B2) {
-        display_status ^= 1;
-        if (!display_status) BSP_GraphLCD_String(3, msg_status[MSG_BLANK]); //only clear once on button press in case others want to use line 3
+    if(!DisableCloudStatus)
+    {
+        if (!PORT4.PORT.BIT.B0 ||   //check if any switches are pressed
+            !PORT4.PORT.BIT.B1 ||
+            !PORT4.PORT.BIT.B2) {
+            display_status ^= 1;
+            if (!display_status) BSP_GraphLCD_String(3, msg_status[MSG_BLANK]); //only clear once on button press in case others want to use line 3
+        }
+    } else {
+        if (!PORT4.PORT.BIT.B0 &&   //check if any switches are pressed
+            !PORT4.PORT.BIT.B1 &&
+            !PORT4.PORT.BIT.B2) { 
+            display_status =1;
+            if (!display_status) BSP_GraphLCD_String(3, msg_status[MSG_BLANK]); //only clear once on button press in case others want to use line 3 
+        } else 
+            display_status = 0;
     }
-
     if (display_status) {
-        BSP_GraphLCD_String(3, msg_status[MSG_BLANK]);  
+        BSP_GraphLCD_String(3, msg_status[MSG_BLANK]);
+        BSP_GraphLCD_String(4, msg_status[MSG_BLANK]);
         BSP_GraphLCD_String(3, msg_status[message]);
-    }  
+        BSP_GraphLCD_String(4, showMAC);
+    }
 }

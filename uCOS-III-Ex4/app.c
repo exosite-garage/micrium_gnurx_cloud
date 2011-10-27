@@ -81,7 +81,7 @@ static  void  AppGraphLCD_Hdr  (void);
 
 #if (APP_CFG_TCPIP_MODULE_EN > 0u)
         void  AppTCPIP_Init    (NET_ERR  *perr);
-        void  AppCloud_Init    (void);
+        void  AppCloud_Init    (CPU_BOOLEAN disableStatus);
 #endif
 
 #if (APP_CFG_PROBE_COM_MODULE_EN > 0u)
@@ -238,7 +238,7 @@ static  void  AppTaskStart (void *p_arg)
     AppTCPIP_Cfg = DEF_TRUE;
 #endif
 
-    AppCloud_Init();
+    AppCloud_Init(0);
 
                                                                 /* Display TCP/IP data for several seconds              */
     OSTimeDlyHMSM(0u, 0u, 10u, 0u,

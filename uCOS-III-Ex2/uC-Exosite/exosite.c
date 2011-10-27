@@ -121,6 +121,23 @@ CPU_BOOLEAN Exosite_Init(CPU_CHAR * pOS, CPU_CHAR * pVer, NET_IF_NBR if_nbr)
 
 /*
 *********************************************************************************************************
+* Get MAC address
+*********************************************************************************************************
+*/
+CPU_BOOLEAN Exosite_GetMAC(CPU_CHAR * pMAC)
+{
+    CPU_INT16U index = 0;
+    while(index < MAC_LENGTH)
+    {
+        pMAC[index] = MAC[index];
+        index++;
+    }
+    pMAC[index] = ASCII_CHAR_NULL;
+    return DEF_TRUE;
+}
+
+/*
+*********************************************************************************************************
 * Temporarily set the used CIK to something else
 * or reset it to value stored in flash by calling with NULL
 *********************************************************************************************************
