@@ -9,7 +9,7 @@
 *
 * File    : APP_AUDIO.C
 * By      : FGK
-* Version : V1.03
+* Version : V1.04
 *********************************************************************************************************
 */
 
@@ -2106,10 +2106,6 @@ static  void  Audio_SetPlayback (CPU_BOOLEAN  playback,
 
     Audio_Paused        = paused;
     AppProbe_SongPaused = paused;
-
-#if (AUDIO_CFG_SSM2377_EN > 0u)
-    SSM2377_En((playback == DEF_TRUE) ? DEF_ENABLED : DEF_DISABLED);
-#endif
     CPU_CRITICAL_EXIT();
 }
 
@@ -3082,6 +3078,8 @@ static  void  SSM2377_Init (void)
 
     PORTA.DDR.BYTE |= DEF_BIT_01;                               /* PA: Gain     (PA1) set as output.                    */
     PORTA.DDR.BYTE |= DEF_BIT_02;                               /* PA: Shutdown (PA2) set as output.                    */
+    
+    SSM2377_En(DEF_ENABLED);
 }
 #endif
 
