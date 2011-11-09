@@ -84,14 +84,16 @@ documentation at http://exosite.com/renesas<br>
 ========================================
 Release Info
 ========================================
+
 ----------------------------------------
-Release 2011-11-08
+Release 2011-11-09
 ----------------------------------------
---) Added Ex1~Ex6 .Mot file for user OOBE download<br>
+--) Move all .Mot files to Download page<br>
 
 ----------------------------------------
 Release 2011-11-08
 ----------------------------------------
+--) Added Ex1~Ex6 .Mot file for user OOBE download<br>
 --) Micrium added support for an Audio Demonstration kit on Ex6<br>
 
 ----------------------------------------
