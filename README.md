@@ -86,6 +86,11 @@ Release Info
 ========================================
 
 ----------------------------------------
+Release 2011-12-13
+----------------------------------------
+--) Added vendor information to the provision function<br>  
+
+----------------------------------------
 Release 2011-11-09
 ----------------------------------------
 --) Move all .Mot files to Download page<br>
@@ -93,7 +98,7 @@ Release 2011-11-09
 ----------------------------------------
 Release 2011-11-08
 ----------------------------------------
---) Added Ex1~Ex6 .Mot file for user OOBE download<br>
+--) Added Ex1~Ex6 .Mot file for user OOBE download<br>   
 --) Micrium added support for an Audio Demonstration kit on Ex6<br>
 
 ----------------------------------------
