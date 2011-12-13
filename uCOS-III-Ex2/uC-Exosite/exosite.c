@@ -488,7 +488,8 @@ static void activate_device(void)
         16                != socket_send(sock, "Content-Length: ", 16) ||
         slen              != socket_send(sock, length, slen) ||
         4                 != socket_send(sock, "\r\n\r\n", 4) ||
-        6                 != socket_send(sock, "model=", 6) ||
+        14                != socket_send(sock, "vendor=renesas", 14) ||
+        7                 != socket_send(sock, "&model=", 7) ||
         PID_LENGTH        != socket_send(sock, PID, PID_LENGTH) ||
         4                 != socket_send(sock, "&sn=", 4) ||
         MAC_LENGTH        != socket_send(sock, MAC, MAC_LENGTH) ||
