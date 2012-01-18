@@ -29,6 +29,7 @@
 *********************************************************************************************************
 */
 #define RX_SIZE     50 // must be at least 12 in order to read HTTP status header
+#define VEN_SIZE    16
 #define OSN_SIZE    30
 #define OSV_SIZE    16
 
@@ -49,6 +50,8 @@
 *                                       LOCAL GLOBAL VARIABLES
 *********************************************************************************************************
 */
+static CPU_SIZE_T    VEN_LENGTH;
+static CPU_CHAR      VEN[VEN_SIZE]; // buffer size is fixed, length is arbitrary
 static CPU_SIZE_T    OSN_LENGTH;
 static CPU_CHAR      OSN[OSN_SIZE]; // buffer size is fixed, length is arbitrary
 static CPU_SIZE_T    OSV_LENGTH;
@@ -103,11 +106,15 @@ CPU_BOOLEAN Exosite_Reinit(void)
 *********************************************************************************************************
 *********************************************************************************************************
 */
-CPU_BOOLEAN Exosite_Init(CPU_CHAR * pOS, CPU_CHAR * pVer, NET_IF_NBR if_nbr)
+CPU_BOOLEAN Exosite_Init(CPU_CHAR * pVen, CPU_CHAR * pOS, CPU_CHAR * pVer, NET_IF_NBR if_nbr)
 {
     init_mac_address(if_nbr);
     init_flash_content();
 
+    Str_Copy_N(VEN, pVen, VEN_SIZE);
+    VEN[VEN_SIZE - 1] = 0;
+    VEN_LENGTH = Str_Len(VEN);
+    
     Str_Copy_N(OSN, pOS, OSN_SIZE);
     OSN[OSN_SIZE - 1] = 0;
     OSN_LENGTH = Str_Len(OSN);
@@ -441,19 +448,22 @@ CPU_BOOLEAN Exosite_Write_Batch(CPU_CHAR **pkeys, CPU_CHAR **pvalues, CPU_SIZE_T
 static void activate_device(void)
 {
     NET_SOCK_ID  sock;
-    CPU_SIZE_T   len, slen, rxlen, osnlen, osvlen;
+    CPU_SIZE_T   len, slen, rxlen, venlen, osnlen, osvlen;
     CPU_CHAR     length[4];
     CPU_CHAR     NCIK[CIK_LENGTH];
     CPU_CHAR     rx[RX_SIZE];
-    CPU_CHAR    *p, *pOSN, *pOSV;
+    CPU_CHAR    *p, *pVEN, *pOSN, *pOSV;
     rdk_meta *meta_info = (rdk_meta *)RDK_META_LOCATION;
     
+    pVEN = malloc(VEN_LENGTH * 3 + 1);
+    venlen = url_encode(pVEN, VEN_LENGTH * 3 + 1, VEN, VEN_LENGTH);    
     pOSN = malloc(OSN_LENGTH * 3 + 1);
     osnlen = url_encode(pOSN, OSN_LENGTH * 3 + 1, OSN, OSN_LENGTH);
     pOSV = malloc(OSV_LENGTH * 3 + 1);
     osvlen = url_encode(pOSV, OSV_LENGTH * 3 + 1, OSV, OSV_LENGTH);
 
-    len  = 6 + PID_LENGTH;        // "model=",PID
+    len  = 7 + venlen;            // "vendor=",VEN  
+    len += 7 + PID_LENGTH;        // "&model=",PID
     len += 4 + MAC_LENGTH;        // "&sn=",MAC
     len += 5 + osnlen;            // "&osn=",OSN
     len += 5 + osvlen;            // "&osv=",OSV
@@ -488,7 +498,8 @@ static void activate_device(void)
         16                != socket_send(sock, "Content-Length: ", 16) ||
         slen              != socket_send(sock, length, slen) ||
         4                 != socket_send(sock, "\r\n\r\n", 4) ||
-        14                != socket_send(sock, "vendor=renesas", 14) ||
+        7                 != socket_send(sock, "vendor=", 7) ||
+        venlen            != socket_send(sock, pVEN, venlen) ||        
         7                 != socket_send(sock, "&model=", 7) ||
         PID_LENGTH        != socket_send(sock, PID, PID_LENGTH) ||
         4                 != socket_send(sock, "&sn=", 4) ||
@@ -504,6 +515,7 @@ static void activate_device(void)
         socket_close(sock);
         return;
     }
+    free(pVEN);    
     free(pOSN);
     free(pOSV);
 

@@ -84,11 +84,15 @@ documentation at http://exosite.com/renesas<br>
 ========================================
 Release Info
 ========================================
+----------------------------------------
+Next...
+----------------------------------------
+--) Made vendor a parameter for Exosite_Init<br>
 
 ----------------------------------------
 Release 2011-12-13
 ----------------------------------------
---) Added vendor information to the provision function<br>  
+--) Added vendor information to the provision function<br>
 
 ----------------------------------------
 Release 2011-11-09

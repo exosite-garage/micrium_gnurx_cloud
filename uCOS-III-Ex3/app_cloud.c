@@ -75,7 +75,7 @@ extern volatile  CPU_INT08U  AppCloudControlLedOn;
 static  void  CloudData_Task    (void *p_arg);                   /* Cloud data task.                           */
 static  void  UI_Update         (CPU_CHAR message);              /* Local function for LCD updates             */
 
-CPU_BOOLEAN Exosite_Init        (CPU_CHAR  *pOS,   CPU_CHAR  *pVer,    NET_IF_NBR if_nbr);
+CPU_BOOLEAN Exosite_Init        (CPU_CHAR  *pVen,  CPU_CHAR  *pOS,     CPU_CHAR *pVer,  NET_IF_NBR if_nbr);
 CPU_BOOLEAN Exosite_Reinit      (void);
 CPU_SIZE_T  Exosite_Read        (CPU_CHAR  *pkey,  CPU_CHAR  *pbuf,    CPU_SIZE_T buflen);
 CPU_BOOLEAN Exosite_Write       (CPU_CHAR  *pkey,  CPU_CHAR  *pval);
@@ -154,7 +154,7 @@ static void CloudData_Task (void *p_arg)
     // OS Name = "Micrium-Ex3" <- MAX Length = 24
     // OS Ver  = "3.01.2" <- MAX Length = 8
     // Use network interface '1' MAC address
-    cloud_available = Exosite_Init("Micrium-Ex3", "3.01.2", (NET_IF_NBR)1);
+    cloud_available = Exosite_Init("renesas", "Micrium-Ex3", "3.01.2", (NET_IF_NBR)1);
 
     Str_Copy(showMAC, "MAC: ");
     if (Exosite_GetMAC(&showMAC[5]) && !DisableCloudStatus)
